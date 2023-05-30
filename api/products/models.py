@@ -104,6 +104,9 @@ class Product(models.Model):
     insurance_base_cost = models.DecimalField(decimal_places=2, max_digits=8)
     insurance_daily_cost = models.DecimalField(decimal_places=2, max_digits=8)
 
+    perc_discount = models.DecimalField(max_digits=2, decimal_places=2, blank=True, null=True)
+    flat_discount = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)
+
     #Images
     main_image = models.OneToOneField(
         'ProductImage', 
@@ -321,6 +324,9 @@ class ProductGrouping(models.Model):
 
     def __str__(self):
         return self.name
+
+
+
     
 
 

@@ -130,6 +130,8 @@ class ProductCard_Serializer(serializers.ModelSerializer):
     brand = BrandSerializer()
     main_image = ProductImage_Serializer()
     total_cost = serializers.SerializerMethodField()
+    discount_bool = serializers.SerializerMethodField()
+    pre_discount_total = serializers.SerializerMethodField()
     days = serializers.SerializerMethodField()
     favorited = serializers.SerializerMethodField()
     filter_tags = FilterTag_Serializer(many=True)
@@ -137,15 +139,34 @@ class ProductCard_Serializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ['uuid', 'name', 'brand', 'slug','average_rating', 'n_ratings', 'main_image', 'total_cost', 'days', 'favorited', 'filter_tags', 'key_attributes']
+        fields = ['uuid', 'name', 'brand', 'slug','average_rating', 'n_ratings', 'main_image', 'total_cost', 'discount_bool', 'pre_discount_total', 'days', 'favorited', 'filter_tags', 'key_attributes']
 
     def get_total_cost(self, obj):
         if 'days' in self.context:
             days = self.context['days']
             total_cost = obj.base_cost + (obj.daily_cost * days)
+
+            if obj.flat_discount != None:
+                total_cost -= obj.flat_discount
+
+            if obj.perc_discount != None:
+                total_cost *= (1 - obj.perc_discount)
+
             return total_cost
         else:
-
+            return None
+        
+    def get_discount_bool(self, obj):
+        if (obj.perc_discount == None and obj.flat_discount == None):
+            return False
+        return True
+    
+    def get_pre_discount_total(self, obj):
+        if 'days' in self.context:
+            days = self.context['days']
+            total_cost = obj.base_cost + (obj.daily_cost * days)
+            return total_cost
+        else:
             return None
         
     def get_days(self, obj):
