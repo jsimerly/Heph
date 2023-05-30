@@ -51,6 +51,7 @@ const MobileCard = ({item, addExtraFunction}) => {
     setFavorited(item.favorited)
   }, [item.favorited])
 
+  console.log(item)
   return (
     <ErrorBoundry fallback="Oops, Sorry! We appear to be missing something.">
 
@@ -95,7 +96,7 @@ const MobileCard = ({item, addExtraFunction}) => {
 
         <ul>
           {item.key_attributes.map((attribute, i) => (
-            <li>
+            <li key={i}>
               <span className='font-bold'>{attribute.att_name}:</span> {attribute.att_stat}
             </li>
           ))}
@@ -103,21 +104,29 @@ const MobileCard = ({item, addExtraFunction}) => {
 
         <div className='flex flex-col w-full justify-between items-start'>
           <div className='flex justify-between w-full items-center h-[50px]'>
-            <div className='flex flex-col h-full justify-center'>
+            <div className='grid grid-cols-2'>
               <div className='text-[26px] md:text-[36px] md:font-bold leading-none'>
-                ${item.total_cost.toFixed(2)}
+                  ${item.total_cost.toFixed(2)}
               </div>
-              <p className='leading-none text-[12px] md:text-[16px] text-center'>
-                For {item.days} Days
-              </p>
+              <div className='line-through flex items-end ml-1'>
+                { item.discount_bool &&             
+                  <>${item.pre_discount_total.toFixed(2)}</>
+                }
+                </div>
+              <div className='flex flex-col h-full justify-center'>
+                <p className='leading-none text-[12px] md:text-[16px] text-center'>
+                  For {item.days} Days
+                </p>
+             </div>
             </div>
+
             <div className='md:hidden'>
-            <button 
-                className={`text-[16px] w-full h-full bg-secondary text-white rounded-md p-2 hover:underline cursor-pointer outline-none`}
-                onClick={handleAddItemClicked}
-            >
-                <AddIcon/>
-            </button>
+              <button 
+                  className={`text-[16px] w-full h-full bg-secondary text-white rounded-md p-2 hover:underline cursor-pointer outline-none`}
+                  onClick={handleAddItemClicked}
+              >
+                  <AddIcon/>
+              </button>
             </div>
             <div className='hidden md:block'>
               <button 

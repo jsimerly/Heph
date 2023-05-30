@@ -5,18 +5,16 @@ import { BlueButton } from "../../utils"
 import navigateShopping from '../../../hooks/navigateShopping';
 import navigateSearch from "../../../hooks/navigateSearch";
 import SearchIcon from '@mui/icons-material/Search';
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { ShoppingContext } from "../../../context";
 import useClickOutside from "../../../hooks/useClickOutside";
 import SlideUp from './SlideUp';
 
 const MobileSearch = ({immediateSearch, searchInput, setSearchInput, searchParamActive, setSearchParamActive}) => {
-  const {selectedCategory, selectedDateRange, selectedDestination} = useContext(ShoppingContext)
+  const {selectedCategory, selectedDateRange, selectedDestination, showSlideUp_mobile, setShowSlideUp_mobile, activePopup_mobile, setActivePopup_mobile} = useContext(ShoppingContext)
 
-  const [showSlideUp, setShowSlideUp] = useState(false)
-  const [activePopup, setActivePopup] = useState(null)
 
-  let node = useClickOutside(()=> setShowSlideUp(false))
+  let node = useClickOutside(()=> setShowSlideUp_mobile(false))
 
   let handleShopping= navigateShopping()
   let handleSearch = navigateSearch()   
@@ -30,18 +28,18 @@ const MobileSearch = ({immediateSearch, searchInput, setSearchInput, searchParam
   }
 
   const handleLocationClicked = () => {
-    setShowSlideUp(true)
-    setActivePopup('where')
+    setShowSlideUp_mobile(true)
+    setActivePopup_mobile('where')
   }
 
   const handleCalendarClicked = () => {
-    setShowSlideUp(true)
-    setActivePopup('when')
+    setShowSlideUp_mobile(true)
+    setActivePopup_mobile('when')
   }
 
   const handleCategoriesClicked = () => {
-    setShowSlideUp(true)
-    setActivePopup('what')
+    setShowSlideUp_mobile(true)
+    setActivePopup_mobile('what')
   }
 
   let displayData = ''
@@ -64,13 +62,13 @@ const MobileSearch = ({immediateSearch, searchInput, setSearchInput, searchParam
       ref={node}
       className={`fixed -bottom-[330px] left-0 w-full ss:hidden flex flex-col bg-white z-50
       transition-transform duration-300
-      ${showSlideUp ?  '-translate-y-[330px]' : 'transform translate-y-0'}`}>
+      ${showSlideUp_mobile ?  '-translate-y-[330px]' : 'transform translate-y-0'}`}>
         <div className="text-neutralDark w-full border-t pr-2">
           <div className="flex flex-row">
             <div className='flex flex-row w-full'>
               <div 
                 className={`flex flex-col justify-center items-center w-[20%] pt-2 pb-1  ${ selectedDestination ? 'text-neutralDark' : 'text-neutralLight'}
-                ${ showSlideUp && activePopup === 'where' ? 'border-primary' : 'border-white'} border-t-2
+                ${ showSlideUp_mobile && activePopup_mobile === 'where' ? 'border-primary' : 'border-white'} border-t-2
                 `}
                 onClick={handleLocationClicked}
               >
@@ -81,7 +79,7 @@ const MobileSearch = ({immediateSearch, searchInput, setSearchInput, searchParam
               </div>
               <div 
                 className={`flex flex-col justify-center items-center w-[20%] pt-2 pb-1 ${ selectedDateRange?.first ? 'text-neutralDark' : 'text-neutralLight'}
-                ${ showSlideUp && activePopup === 'when' ? 'border-primary' : 'border-white'} border-t-2`}
+                ${ showSlideUp_mobile && activePopup_mobile === 'when' ? 'border-primary' : 'border-white'} border-t-2`}
                 onClick={handleCalendarClicked}
               >
                 <CalendarMonthIcon sx={{fontSize: 30}}/>
@@ -92,7 +90,7 @@ const MobileSearch = ({immediateSearch, searchInput, setSearchInput, searchParam
               <div 
                 className={` flex flex-row items-center w-[60%] pt-2 pb-1 
                 ${ displayData ? 'text-neutralDark' : 'text-neutralLight'}
-                ${ showSlideUp && activePopup === 'what' ? 'border-primary' : 'border-white'} border-t-2
+                ${ showSlideUp_mobile && activePopup_mobile === 'what' ? 'border-primary' : 'border-white'} border-t-2
                 `}
                 onClick={handleCategoriesClicked}
               >
@@ -119,9 +117,9 @@ const MobileSearch = ({immediateSearch, searchInput, setSearchInput, searchParam
           </div>
         </div>
         <SlideUp
-          open={showSlideUp}
-          setOpen={setShowSlideUp}
-          activePopup={activePopup}
+          open={showSlideUp_mobile}
+          setOpen={setShowSlideUp_mobile}
+          activePopup={activePopup_mobile}
           searchInput={searchInput}
           setSearchInput={setSearchInput}
           setSearchParamActive={setSearchParamActive}

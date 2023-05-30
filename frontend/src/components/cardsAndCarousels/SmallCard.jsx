@@ -55,7 +55,7 @@ const SmallCard = ({item, addExtraFunction}) => {
         <div>
           ${item.total_cost.toFixed(2)}
         </div>
-        <div className='text-white bg-primary rounded-md cursor-pointer'>
+        <div className='text-white bg-secondary rounded-md cursor-pointer'>
           <AddIcon
             onClick={handleAddItemClicked}
           />

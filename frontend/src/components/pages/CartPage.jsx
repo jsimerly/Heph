@@ -86,15 +86,13 @@ const CartPage = () => {
 
 
     const getCost = (item) => {
-    const itemTotalCost = (parseFloat(item.item.base_cost) + (parseFloat(item.item.daily_cost) * parseInt(item.days)))
-    const totalCost = item.quantity * itemTotalCost
+    const totalCost = item.quantity * item.item.total_cost
 
     return  totalCost
     }
     
     const getInsurance = (item) => {
-        const itemTotalCost = parseFloat(item.item.insurance_base_cost) + (parseFloat(item.item.insurance_daily_cost) * parseInt(item.days))
-        const totalCost = item.quantity * itemTotalCost
+        const totalCost = item.quantity * item.item.insurance_total_cost
         return  totalCost
     }
 

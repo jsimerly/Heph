@@ -132,14 +132,24 @@ class ProductCard_Serializer(serializers.ModelSerializer):
     total_cost = serializers.SerializerMethodField()
     discount_bool = serializers.SerializerMethodField()
     pre_discount_total = serializers.SerializerMethodField()
+    insurance_total_cost = serializers.SerializerMethodField()
     days = serializers.SerializerMethodField()
     favorited = serializers.SerializerMethodField()
     filter_tags = FilterTag_Serializer(many=True)
     key_attributes = KeyAttributes_Serializer(many=True)
 
+
     class Meta:
         model = Product
-        fields = ['uuid', 'name', 'brand', 'slug','average_rating', 'n_ratings', 'main_image', 'total_cost', 'discount_bool', 'pre_discount_total', 'days', 'favorited', 'filter_tags', 'key_attributes']
+        fields = ['uuid', 'name', 'brand', 'slug','average_rating', 'n_ratings', 'main_image', 'total_cost', 'discount_bool', 'pre_discount_total', 'days', 'favorited', 'filter_tags', 'key_attributes', 'insurance_total_cost']
+
+    def get_insurance_total_cost(self,obj):
+        if 'days' in self.context:
+            days = self.context['days']
+            total_insurance_cost = obj.insurance_base_cost + (obj.insurance_daily_cost * days)
+            return total_insurance_cost
+        else:
+            return None
 
     def get_total_cost(self, obj):
         if 'days' in self.context:

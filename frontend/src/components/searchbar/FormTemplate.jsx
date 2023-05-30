@@ -1,6 +1,15 @@
+import { useState, useContext } from "react";
+import { ShoppingContext } from "../../context";
 
+const FormTemplate = ({node, open, openFunc, selectedData, icon: IconComponent, placeholder, dropdown, mobileName}) => {
 
-const FormTemplate = ({node, open, openFunc, selectedData, icon: IconComponent, placeholder, dropdown}) => {
+  const {setShowSlideUp_mobile, setActivePopup_mobile} = useContext(ShoppingContext)
+
+  const onClick = () => {
+    openFunc((openBool) => !openBool);
+    setShowSlideUp_mobile(true)
+    setActivePopup_mobile(mobileName)
+  }
     
   return (
     <div 
@@ -9,16 +18,16 @@ const FormTemplate = ({node, open, openFunc, selectedData, icon: IconComponent, 
     >
         <label className="cursor-pointer text-neutralLight focus-within:text-neutralDark flex items-center w-full h-full">
             <IconComponent className={`w-8 h-8 absolute scale-125 ml-2 transform ${selectedData == '' ? 'text-neutralLight' : 'text-neutralDark'}`}
-            onClick={()=> openFunc((openBool) => !openBool)}
+            onClick={onClick}
         />
             <div className={`bg-white cursor-pointer rounded-md mr-1 flex-1 overflow-hidden truncate focus-shadow-outline focus:outline-none placeholder-neutralLight pl-10 px-4 h-full items-center flex ${selectedData == '' ? 'text-neutralLight': 'text-neutralDark'}  border border-primary`} 
-            onClick={()=> openFunc((openBool) => !openBool)}
+            onClick={onClick}
             >
                 {selectedData == '' ? placeholder : selectedData}
             </div>
         </label>
         {open &&
-          <div className="z-50 top-8 flex w-full justify-center items-center">
+          <div className="z-50 top-8 w-full justify-center items-center hidden ss:flex">
             {dropdown}
           </div>
         }

@@ -39,6 +39,7 @@ const When = () => {
         dropdown={<WhenDropdown setOpen={setOpen}/>}
         placeholder={'When'}
         icon={CalendarMonthIcon}
+        mobileName={'when'}
     />
   )
 }

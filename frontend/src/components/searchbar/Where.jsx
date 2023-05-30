@@ -21,6 +21,7 @@ const Where = () => {
         dropdown={<WhereDropdown setOpen={setOpen}/>}
         placeholder={'Where to'}
         icon={LocationOnIcon}
+        mobileName={'where'}
     />
   )
 }

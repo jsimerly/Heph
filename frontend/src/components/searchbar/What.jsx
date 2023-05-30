@@ -39,6 +39,7 @@ const What = ({searchInput, setSearchInput, searchParamActive, setSearchParamAct
             />}
         placeholder={'What'}
         icon={ConstructionIcon}
+        mobileName={'what'}
     />
   ) 
 }

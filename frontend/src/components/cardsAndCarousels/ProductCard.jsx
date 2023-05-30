@@ -71,9 +71,9 @@ const ProductCard = ({item, addExtraFunction}) => {
             onClick={(e) => handleFavoriteClicked(e)}
             >
             {itemFavorited ? 
-              <FavoriteIcon className={`text-primary`} sx={{fontSize: 30}}/>
+              <FavoriteIcon className={`text-secondary`} sx={{fontSize: 30}}/>
               :
-              <FavoriteBorderIcon className={`text-primary`} sx={{fontSize: 30}}/>
+              <FavoriteBorderIcon className={`text-secondary`} sx={{fontSize: 30}}/>
             }
             
           </div>
@@ -105,17 +105,24 @@ const ProductCard = ({item, addExtraFunction}) => {
         </div>
         <div className='flex flex-col flex-1 w-full justify-end items-start pb-1'>
           <div className='flex justify-between w-full items-center h-[50px]'>
-            <div className='flex flex-col h-full justify-center'>
-              <div className='font-semibold md:text-[26px] leading-none'>
-                ${item.total_cost.toFixed(2)}
+            <div className='grid grid-cols-2'>
+              <div className='text-[20px] md:text-[26px] md:font-bold leading-none'>
+                  ${item.total_cost.toFixed(2)}
               </div>
-              <p className='leading-none text-[10px] sm:text-[12px] text-center'>
-                For {item.days} Days
-              </p>
+              <div className='line-through flex items-end ml-1 text-[10px] sm:text-[14px]'>
+                { item.discount_bool &&             
+                  <>${item.pre_discount_total.toFixed(2)}</>
+                }
+                </div>
+              <div className='flex flex-col h-full justify-center'>
+                <p className='leading-none text-[10px] md:text-[12px] text-center'>
+                  For {item.days} Days
+                </p>
+             </div>
             </div>
             <div className='h-full hidden sm:block'>
               <button 
-                  className={`text-[16px] w-full h-full bg-primary text-white rounded-md p-2 hover:underline cursor-pointer outline-none`}
+                  className={`text-[16px] w-full h-full bg-secondary text-white rounded-md p-2 hover:underline cursor-pointer outline-none`}
                   onClick={handleAddItemClicked}
               >
                 Add to Cart
@@ -123,7 +130,7 @@ const ProductCard = ({item, addExtraFunction}) => {
             </div>
             <div className='sm:hidden'>
               <button 
-                    className={`text-[16px] w-full h-full bg-primary text-white rounded-md p-1 hover:underline cursor-pointer outline-none`}
+                    className={`text-[16px] w-full h-full bg-secondary text-white rounded-md p-1 hover:underline cursor-pointer outline-none`}
                     onClick={handleAddItemClicked}
                 >
                   <AddIcon/>

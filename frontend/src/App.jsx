@@ -65,6 +65,9 @@ function App() {
   const location = useLocation();
   const [immediateSearch, setImmediateSearch] = useState(false)
 
+  const [showSlideUp_mobile, setShowSlideUp_mobile] = useState(false)
+  const [activePopup_mobile, setActivePopup_mobile] = useState(null)
+
   useEffect(()=>{
     if (location.pathname === '/shopping' || location.pathname === '/search'){
       setImmediateSearch(true)
@@ -111,7 +114,9 @@ function App() {
             selectedCategory, setSelectedCategory,
             allDests,
             cartSize, setCartSize,
-            handleNotification
+            handleNotification,
+            showSlideUp_mobile, setShowSlideUp_mobile,
+            activePopup_mobile, setActivePopup_mobile,
           }}
         >
           <Navbar

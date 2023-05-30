@@ -25,7 +25,7 @@ const ItemsV2 = ({products, sortBy}) => {
               <Empty/>
               :
               sortedProducts.map((item, i) => (
-                <MobileCard item={item} key={i}/>
+                <MobileCard item={item} key={'mobile_card_shopping_'+i}/>
               ))
           }
       </div>

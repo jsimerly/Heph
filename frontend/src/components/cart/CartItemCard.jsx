@@ -112,11 +112,11 @@ const CartItemCard = ({item, updateCartItem, deleteCartItem, getInsurance, getCo
               >
                 {item.insurance_purchased ? 
                 <CheckBoxIcon
-                  className='text-primary group-hover:scale-110'
+                  className='text-secondary group-hover:scale-110'
                 /> 
                 : 
                 <CheckBoxOutlineBlankIcon
-                  className='text-primary group-hover:scale-110'
+                  className='text-secondary group-hover:scale-110'
                 />}
               
               <div className='ml-1 group-hover:underline'>
@@ -178,6 +178,9 @@ const CartItemCard = ({item, updateCartItem, deleteCartItem, getInsurance, getCo
             />
           </div>
           <div className='absolute flex flex-col leading-none bottom-0 right-0 p-2'>
+            {item.item.discount_bool &&
+              <span className='flex justify-end text-[12px] sm:text-[14px] line-through ml-1'>${item.item.pre_discount_total.toFixed(2)}</span>
+            }
             <span className='font-bold text-[20px] sm:text-[24px]'> ${getCost(item).toFixed(2)}</span>
           </div>
       </div>

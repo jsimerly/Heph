@@ -18,7 +18,7 @@ class CartItem_Serializer(serializers.ModelSerializer):
         fields = ['uuid', 'insurance_purchased', 'item', 'quantity', 'days']
 
     def get_item(self, obj):
-        serializer = CartCard_Serializer(obj.item, context=self.context)
+        serializer = ProductCard_Serializer(obj.item, context=self.context)
         return serializer.data
     
     def get_days(self, obj):
