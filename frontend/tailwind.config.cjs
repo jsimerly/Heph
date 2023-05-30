@@ -8,18 +8,18 @@ module.exports = {
       extend: {
         colors: {
           // https://mdigi.tools/darken-color/#faf3c5 to lighten
-          primary: "#4F86C6",
-          primaryLight: "#e4eaf6",
+          primary: "#2b2b2a",
+          primaryLight: "#8a8a8a",
           
-          secondary: "#4F86C6",
-          secondaryLight: "#e4eaf6",
+          secondary: "#e03400",
+          secondaryLight: "#e0613a",
 
           tertiary: '',
           tertiaryLight: '',
 
-          neutralDark: "#454d66",
-          neutralLight: "#aeb4c8",
-          neutralOffWhite: '#f4f5f8',
+          neutralDark: "#2b2b2a",
+          neutralLight: "#6e6e6d",
+          neutralOffWhite: '#f7f7f7',
 
           errorRed: "#C76C63",
         },

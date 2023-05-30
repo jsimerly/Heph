@@ -1,6 +1,6 @@
 import { heroMain } from '../../../constants/pages/landingCopy_constant'
+import { hero_banner } from '../../../constants/assets/images/banners'
 import navigateShopping from '../../hooks/navigateShopping'
-import { hero_banner, hero_banner_mobile } from '../../assets/images/banners'
 import { LargeBlueButton} from '../utils'
 import { useState } from 'react'
 

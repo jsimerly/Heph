@@ -1,4 +1,4 @@
-import { full_line_drawing } from "../../assets/images/banners"
+import { heph_line_drawing } from "../../../constants/assets/images/banners"
 import { howToInfo } from "../../../constants/pages/landingCopy_constant"
 
 const StepCard = ({n, title, paragraph, index}) => (
@@ -6,7 +6,7 @@ const StepCard = ({n, title, paragraph, index}) => (
     <div className='flex flex-col sm:items-center flex-1 p-6 sm:p-0 md:p-6' index={'std_card_'+index}>
         <div className='flex justify-start pl-10 sm:pl-0 sm:justify-center items-center sm:min-h-[80px] w-full'>
             <div className="flex flex-row items-center">
-                <div className='rounded-full min-w-[42px] min-h-[40px] flex justify-center items-center border-2 border-primary text-[24px] text-primary font-bold'>
+                <div className='rounded-full min-w-[42px] min-h-[40px] flex justify-center items-center border-2 border-secondary text-[24px] text-secondary font-bold'>
                     {n}
                 </div>
                 <h1 className={`'text-start pl-8' mx-4 font-bold text-[24px] text-center inline-flex items-center`}>
@@ -43,7 +43,7 @@ const HowItWorksV2 = () => {
                     })}
             </div>
             <div className='w-full flex justify-center my-6 order-2 md:order-3'>
-                <img src={full_line_drawing}/>
+                <img src={heph_line_drawing}/>
             </div>
         </div>
     </div>

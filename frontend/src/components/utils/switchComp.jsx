@@ -4,7 +4,7 @@ export const SwitchComp = ({className, compDict, defComp,}) => {
 
     const classProps = (selected) => {
         if (selected==true){
-            return 'sm:underline font-semibold text-white bg-primary sm:bg-white sm:text-primary'
+            return 'sm:underline font-semibold text-primary bg-white border-2 sm:text-primary border-secondary'
         }
         return ''
     }

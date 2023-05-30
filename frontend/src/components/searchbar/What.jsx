@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import ConstructionIcon from '@mui/icons-material/Construction';
 
 import { ShoppingContext } from '../../context';
 import FormTemplate from "./FormTemplate";
@@ -38,7 +38,7 @@ const What = ({searchInput, setSearchInput, searchParamActive, setSearchParamAct
                 setSearchParamActive={setSearchParamActive}
             />}
         placeholder={'What'}
-        icon={BeachAccessIcon}
+        icon={ConstructionIcon}
     />
   ) 
 }

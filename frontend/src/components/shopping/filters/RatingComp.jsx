@@ -94,7 +94,7 @@ const RatingComp = ({starFilter, setStarFilter}) => {
                 }
             </div>
             <div 
-                className={`${open? null : 'hidden'} inline-flex text-primary`}
+                className={`${open? null : 'hidden'} inline-flex text-secondary`}
                 onMouseLeave={handleLeaveFully}
             >
                 {stars.map((_, index) => {

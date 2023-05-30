@@ -1,10 +1,10 @@
-import { cool_blog, unicorn_blog, games_blog, kids_blog } from '../../src/assets/images/blog'
+import { yard_healthy, top_10_diy, build_a_deck } from '../assets/images/blog'
 import * as fun_beach_games_images from '../../src/assets/images/blog/beach games'
 import * as east_coast_places_images from '../../src/assets/images/blog/places'
 
 export const blogData = {
     'coolest-spots-on-the-east-coast-01042023' : {
-        img: cool_blog,
+        img: build_a_deck,
         title:'Coolest Spots on the East Coast',
         date:'Jan 4, 2023',
         body: [
@@ -185,7 +185,7 @@ export const blogData = {
 
 
     "10-fun-beach-games-12162022" : {
-        img: games_blog,
+        img: yard_healthy,
         title: "10 Fun Beach Games",
         date: "Dec 16, 2022",
         body: [
@@ -271,7 +271,7 @@ export const blogData = {
 
 
     'How-to-make-your-childs-first-beach-day-a-success-01182023' :{
-        img: kids_blog,
+        img: build_a_deck,
         title: "How to make your child's first beach day a success",
         date:'Jan 18, 2023',
         body: [

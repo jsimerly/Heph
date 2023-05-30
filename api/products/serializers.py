@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Product, Brand, ProductMInfo, ProductReview, Stock, ProductImage, Category, FilterTag, FilterOption, ProductGrouping
+from .models import Product, Brand, ProductMInfo, ProductReview, Stock, ProductImage, Category, FilterTag, FilterOption, ProductGrouping, ProductHighlights, ProductKeyAttributes, ProductSpecs
 from django.contrib.auth import get_user_model
 from django.utils.functional import cached_property
 
@@ -110,6 +110,21 @@ class FilterTag_Serializer(serializers.ModelSerializer):
     def get_filter_option(self, obj):
         filter_option = obj.filter_option
         return filter_option.display_name
+    
+class KeyAttributes_Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductKeyAttributes
+        fields = ['att_name', 'att_stat']
+
+class Highlights_Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductHighlights
+        fields = ['highlight']
+
+class Specs_Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = ProductSpecs
+        fields = ['spec_name', 'spec_info']
 
 class ProductCard_Serializer(serializers.ModelSerializer):
     brand = BrandSerializer()
@@ -118,10 +133,11 @@ class ProductCard_Serializer(serializers.ModelSerializer):
     days = serializers.SerializerMethodField()
     favorited = serializers.SerializerMethodField()
     filter_tags = FilterTag_Serializer(many=True)
+    key_attributes = KeyAttributes_Serializer(many=True)
 
     class Meta:
         model = Product
-        fields = ['uuid', 'name', 'brand', 'slug','average_rating', 'n_ratings', 'main_image', 'total_cost', 'days', 'favorited', 'filter_tags',]
+        fields = ['uuid', 'name', 'brand', 'slug','average_rating', 'n_ratings', 'main_image', 'total_cost', 'days', 'favorited', 'filter_tags', 'key_attributes']
 
     def get_total_cost(self, obj):
         if 'days' in self.context:
@@ -151,10 +167,13 @@ class Product_Serializer(serializers.ModelSerializer):
     insurance_total_cost = serializers.SerializerMethodField()
     days = serializers.SerializerMethodField()
     favorited = serializers.SerializerMethodField()
+    key_attributes = KeyAttributes_Serializer(many=True)
+    highlights = Highlights_Serializer(many=True)
+    specs = Specs_Serializer(many=True)
 
     class Meta:
         model = Product
-        fields = ['uuid', 'name', 'brand', 'slug', 'average_rating', 'n_ratings', 'category', 'filter_tags', 'total_cost', 'days', 'insurance_total_cost', 'main_image', 'images','frequently_bought_with', 'favorited']
+        fields = ['uuid', 'name', 'brand', 'slug', 'average_rating', 'n_ratings', 'category', 'filter_tags', 'total_cost', 'days', 'insurance_total_cost', 'main_image', 'images','frequently_bought_with', 'favorited', 'key_attributes', 'highlights', 'specs']
 
     def get_total_cost(self, obj):
         if 'days' in self.context:
@@ -230,23 +249,18 @@ class ProductMInfo_Serializer(serializers.ModelSerializer):
     product = Product_Serializer()
     class Meta:
         model = ProductMInfo
-        fields = ['product', 'main_desc', 'bullets', 'prod_desc', 'highlights', 'add_info_msrp', 'add_info_manu', 'ranking', 'rank_link', 'specs']
+        fields = ['product', 'main_desc', 'prod_desc', 'add_info_msrp', 'add_info_manu', 'ranking', 'rank_link',]
 
     def create(self, validated_data):
         return ProductMInfo.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
         instance.main_desc = validated_data.get('main_desc', instance.main_desc)
-        instance.bullets = validated_data.get('bullets', instance.bullets)
-
         instance.prod_desc = validated_data.get('prod_desc', instance.prod_desc)
-        instance.highlights = validated_data.get('highlights', instance.highlights)
         instance.add_info_msrp = validated_data.get('add_info_msrp', instance.add_info_msrp)
         instance.add_info_manu = validated_data.get('add_info_manu', instance.add_info_manu)
         instance.ranking = validated_data.get('ranking', instance.ranking)
         instance.rank_link = validated_data.get('rank_link', instance.rank_link)
-
-        instance.specs = validated_data.get('specs', instance.specs)
 
         instance.save()
         return instance

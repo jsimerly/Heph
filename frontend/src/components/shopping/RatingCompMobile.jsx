@@ -11,7 +11,6 @@ const RatingCompMobile = ({starFilter, setStarFilter}) => {
     const stars = Array(5).fill(null) //static array
 
     const handleClick = (index) => {
-        console.log('ehere')
         if (selection_1 === null){
             setSelection_1(index+1)
         } else {
@@ -26,7 +25,6 @@ const RatingCompMobile = ({starFilter, setStarFilter}) => {
 
     const FilledStar = ({i}) => (
         <StarIcon
-            key={'filled_star_m_'+i}
             sx={{fontSize: 30}}
             onClick={()=>handleClick(i)}
         />
@@ -34,7 +32,6 @@ const RatingCompMobile = ({starFilter, setStarFilter}) => {
 
     const EmptyStar = ({i}) => (
         <StarOutlineIcon
-            key={'empty_star_m_'+i}
             sx={{fontSize: 30}}
             onClick={()=>handleClick(i)}
         />
@@ -56,22 +53,21 @@ const RatingCompMobile = ({starFilter, setStarFilter}) => {
                 }
             </div>
             <div 
-                className={`${open? null : 'hidden'} inline-flex text-primary py-3`}
+                className={`${open? null : 'hidden'} inline-flex text-secondary py-3`}
             >
                 {stars.map((_, index) => {
-                    console.log(selection_1)
                     if (!selection_1){
                         if (index+1 >= starFilter[0] && index+1 <= starFilter[1]){
-                            return <FilledStar i={index}/>
+                            return <FilledStar i={index} key={'filled_star_m_'+index}/>
 
                         } else {
-                            return <EmptyStar i={index}/>
+                            return <EmptyStar i={index} key={'empty_star_m_'+index}/>
                         }
                     } else {
                         if (selection_1 === index+1){
-                            return <FilledStar i={index}/>
+                            return <FilledStar i={index} key={'filled_star_m_'+index}/>
                         }
-                        return <EmptyStar i={index}/>
+                        return <EmptyStar i={index} key={'empty_star_m_'+index}/>
                     }
 
                 })}

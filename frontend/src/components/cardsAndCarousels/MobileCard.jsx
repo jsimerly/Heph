@@ -64,7 +64,7 @@ const MobileCard = ({item, addExtraFunction}) => {
             className='bg-white object-scale-down rounded-md hover:cursor-pointer aspect-square max-w-[50%] h-[100%]'
           />
       )}
-      <div className='p-2 px-4 text-neutralDark flex flex-col items-start justify-between w-full h-full'>
+      <div className='p-4 text-neutralDark flex flex-col items-start justify-between w-full h-full'>
         <div className='flex flex-row justify-between w-full'>
             <div className='flex flex-col justify-end min-h-[60px] w-[80%]'>
               <h3 
@@ -86,12 +86,20 @@ const MobileCard = ({item, addExtraFunction}) => {
             </div>
             <div onClick={handleFavoriteClicked} className='flex justify-end items-start'>
                 {itemFavorited ? 
-                <FavoriteIcon className={`text-primary`} sx={{fontSize: 35}}/>
+                <FavoriteIcon className={`text-secondary`} sx={{fontSize: 35}}/>
                 :
-                <FavoriteBorderIcon className={`text-primary`} sx={{fontSize: 35}}/>
+                <FavoriteBorderIcon className={`text-secondary`} sx={{fontSize: 35}}/>
                 }
           </div>
         </div>
+
+        <ul>
+          {item.key_attributes.map((attribute, i) => (
+            <li>
+              <span className='font-bold'>{attribute.att_name}:</span> {attribute.att_stat}
+            </li>
+          ))}
+        </ul>
 
         <div className='flex flex-col w-full justify-between items-start'>
           <div className='flex justify-between w-full items-center h-[50px]'>
@@ -105,7 +113,7 @@ const MobileCard = ({item, addExtraFunction}) => {
             </div>
             <div className='md:hidden'>
             <button 
-                className={`text-[16px] w-full h-full bg-primary text-white rounded-md p-2 hover:underline cursor-pointer outline-none`}
+                className={`text-[16px] w-full h-full bg-secondary text-white rounded-md p-2 hover:underline cursor-pointer outline-none`}
                 onClick={handleAddItemClicked}
             >
                 <AddIcon/>
@@ -113,7 +121,7 @@ const MobileCard = ({item, addExtraFunction}) => {
             </div>
             <div className='hidden md:block'>
               <button 
-                  className={`text-[18px] w-full h-full bg-primary text-white rounded-md p-2 hover:underline cursor-pointer outline-none`}
+                  className={`text-[18px] w-full h-full bg-secondary text-white rounded-md p-2 hover:underline cursor-pointer outline-none`}
                   onClick={handleAddItemClicked}
               >
                   Add to Cart

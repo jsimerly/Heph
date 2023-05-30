@@ -158,7 +158,6 @@ def validate_filter_tags(sender, instance, action, pk_set, **kwargs):
 
         instance.save()
 
-
 def get_upload_path_prod(instance, filename):
     return f"products/{instance.product.brand}/{instance.product.slug}/{filename}"
 
@@ -199,11 +198,9 @@ class ProductMInfo(models.Model):
             raise ValueError('The max length for main_desc is 1000 characters.')
 
     main_desc = models.TextField(validators=[validate_max_desc])
-    bullets = ArrayField(models.CharField(max_length=40), default=list)
 
     #Details Section
     prod_desc = models.TextField()
-    highlights = ArrayField(models.CharField(max_length=100))
     add_info_msrp = models.DecimalField(decimal_places=2, max_digits=8)
         #brand already included in Prod
     add_info_manu = models.CharField(max_length=20)
@@ -211,10 +208,36 @@ class ProductMInfo(models.Model):
     rank_link = models.CharField(max_length=60, null=True, blank=True)
         #sku already included
     
-    specs = JSONField()
-
     def __str__(self):
         return  self.product.brand.name + " - " + self.product.name + " Information"
+    
+class ProductKeyAttributes(models.Model):
+    product = models.ForeignKey(
+        Product, 
+        on_delete=models.CASCADE,
+        related_name='key_attributes',
+    )
+
+    att_name = models.CharField(max_length=120)
+    att_stat = models.CharField(max_length=200)
+
+class ProductHighlights(models.Model):
+    product_info = models.ForeignKey(
+        Product, 
+        on_delete=models.CASCADE,
+        related_name='highlights',
+    )
+    highlight = models.CharField(max_length=300)
+            
+class ProductSpecs(models.Model):
+    product_info = models.ForeignKey(
+        Product, 
+        on_delete=models.CASCADE,
+        related_name='specs',
+    )
+    spec_name = models.CharField(max_length=120)
+    spec_info = models.CharField(max_length=200)
+
 
 class ProductReview(models.Model):  
     uuid = models.UUIDField(default=uuid4, editable=False)

@@ -240,7 +240,7 @@ const ShoppingMain = ({filterData, relatedCategories, products, brands}) => {
             <WhiteButton 
               onClick={()=>{setOpenFilter(openFilter => !openFilter); console.log('whitebutton')}}
               content={
-                <div>
+                <div className='text-primary'>
                   <TuneIcon className='mr-1 text-neutralDark group-hover:scale-110'/>
                   Filter
                 </div>
@@ -248,7 +248,7 @@ const ShoppingMain = ({filterData, relatedCategories, products, brands}) => {
               className='!text-neutralDark'
             />
             <button 
-              className={`${filterActive ? '' : 'hidden'} text-white bg-primary rounded-md h-full p-2 shadow-md group min-h-[42px] min-w-[42px]`}
+              className={`${filterActive ? '' : 'hidden'} text-white bg-secondary rounded-md h-full p-2 shadow-md group min-h-[42px] min-w-[42px]`}
               onClick={handleResetFilters}
               ref={clearFilterNode}
             >
@@ -285,7 +285,7 @@ const ShoppingMain = ({filterData, relatedCategories, products, brands}) => {
                     <WhiteButton
                       onClick={handleSortClick}
                       content={
-                        <div className='flex flex-row justify-between'>
+                        <div className='flex flex-row justify-between text-primary'>
                           Sort By<span className='hidden sm:block'>: {sortBy}
                           <ExpandMoreIcon className='ml-1 text-neutralDark group-hover:scale-110'/>
                           </span>

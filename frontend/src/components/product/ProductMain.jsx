@@ -105,9 +105,9 @@ const ProductMain = ({mainCardInfo}) => {
                 onClick={handleFavoriteClicked}
               >
                 {itemFavorited ? 
-                  <FavoriteIcon className={`text-primary`} sx={{fontSize: 30}}/>
+                  <FavoriteIcon className={`text-secondary`} sx={{fontSize: 30}}/>
                   :
-                  <FavoriteBorderIcon className={`text-primary`} sx={{fontSize: 30}}/>
+                  <FavoriteBorderIcon className={`text-secondary`} sx={{fontSize: 30}}/>
                 }
               </div>
 
@@ -143,12 +143,12 @@ const ProductMain = ({mainCardInfo}) => {
                 {insured ? 
                 <CheckBoxIcon
                   sx={{fontSize: '35px'}}
-                  className='text-primary group-hover:scale-110'
+                  className='text-secondary group-hover:scale-110'
                 /> 
                 : 
                 <CheckBoxOutlineBlankIcon
                   sx={{fontSize: '35px'}}
-                  className='text-primary group-hover:scale-110'
+                  className='text-secondary group-hover:scale-110'
                 />}
                 {mainCardInfo && 
                   <div className='text-[20px] ml-2 group-hover:underline'>
@@ -160,16 +160,16 @@ const ProductMain = ({mainCardInfo}) => {
             {mainCardInfo && 
               <div className='w-full flex flex-col justify-start mt-6'>
                 <div>
-                  <h3 className='font-semibold text-[14px]'>
-                    Producer Description
+                  <h3 className='font-semibold text-[16px]'>
+                    Product Description
                   </h3>
                   <p>
                     {mainCardInfo.desc}
                   </p>
-                  <ul className='list-disc pl-10 pt-6'>
-                  {mainCardInfo.bullets.map((bullet, i) => (
+                  <ul className='pt-6'>
+                  {mainCardInfo && mainCardInfo.keyAttributes.map((bullet, i) => (
                     <li key={i}>
-                      {bullet}
+                      <span className='font-bold'>{bullet.att_name}:</span> {bullet.att_stat}
                     </li>
                     ))}
                   </ul>

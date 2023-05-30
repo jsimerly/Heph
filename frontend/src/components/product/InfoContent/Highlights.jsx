@@ -6,7 +6,7 @@ const Highlights = ({highlights}) => {
       <ul className='list-disc w-[90%]'>
           {highlights.map((highlight, i) => (
               <li key={'highlights_'+i}>
-                {highlight}
+                {highlight.highlight}
               </li>
           ))}
       </ul>

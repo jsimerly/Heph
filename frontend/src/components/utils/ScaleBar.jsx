@@ -38,9 +38,9 @@ const ScaleBar = ({values, setValues, priceExtrema, setDisplayMax, setDisplayMin
                   style={{
                     background: `linear-gradient(to right, ${company.neutral_light} 0%, ${company.neutral_light} ${
                       ((displayValues[0] - priceExtrema[0]) / (priceExtrema[1] - priceExtrema[0])) * 100
-                    }%, ${company.primary_color} ${
+                    }%, ${company.secondary_color} ${
                       ((displayValues[0] - priceExtrema[0]) / (priceExtrema[1] - priceExtrema[0])) * 100
-                    }%, ${company.primary_color} ${
+                    }%, ${company.secondary_color} ${
                       ((displayValues[1] - priceExtrema[0]) / (priceExtrema[1] - priceExtrema[0])) * 100
                     }%, ${company.neutral_light} ${
                       ((displayValues[1] - priceExtrema[0]) / (priceExtrema[1] - priceExtrema[0])) * 100

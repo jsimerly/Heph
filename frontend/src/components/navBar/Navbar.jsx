@@ -1,6 +1,6 @@
 import useDropdown from '../../hooks/useDropdown';
 
-import { main_primary } from '/src/assets/images/blueElf'
+import { main_primary } from '../../../constants/assets/images/heph';
 import Searchbar from '../searchbar/desktop/Searchbar';
 import styles from '../../styles';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -19,7 +19,7 @@ const Navbar = ({immediateSearch, searchInput, setSearchInput, searchParamActive
                 <a href='/'>
                     <div className='flex justify-start items-center text-[28px] mr-5' to='/'>
                         <img
-                            src={main_primary}
+                            src={ main_primary}
                             className='w-[42px] h-[42px] mr-2 cursor-pointer '
                         />
                         <div className='font-londrina hidden md:block cursor-pointer'>

@@ -1,4 +1,4 @@
-import { games_blog, cool_blog, kids_blog } from '../../assets/images/blog'
+import { yard_healthy, top_10_diy, build_a_deck } from '../../../constants/assets/images/blog'
 import { BlogCard } from '../auxillaryPages'
 
 const BlogBanner = () => {
@@ -9,19 +9,19 @@ const BlogBanner = () => {
         </h1>
         <div className="flex flex-col sm:flex-row justify-between gap-6 w-full ms:px-6">
             <BlogCard 
-                img={games_blog} 
+                img={yard_healthy} 
                 title={'10 Fun Beach Games'}
                 date={'Dec 16, 2022'}
                 link={"10-fun-beach-games-12162022"}                
             />
             <BlogCard 
-                img={kids_blog} 
+                img={top_10_diy} 
                 title={"How to make your child's first beach day a success"}
                 date={'Jan 18, 2023'}
                 link={'How-to-make-your-childs-first-beach-day-a-success-01182023'}
             />
             <BlogCard 
-                img={cool_blog} 
+                img={build_a_deck} 
                 title={'Coolest Spots on the East Coast'}
                 date={'Jan 4, 2023'}
                 link={'coolest-spots-on-the-east-coast-01042023'}

@@ -9,7 +9,7 @@ import {
     yeti_white_logo,
 }  from "../../src/assets/images/logos"
 
-import { gameOn, layingOut, withKids} from '../../src/assets/images/categories'
+import { yard, carpet, tools, saw } from "../assets/images/categories";
 
 import EditIcon from '@mui/icons-material/Edit';
 import LoopIcon from '@mui/icons-material/Loop';
@@ -51,21 +51,21 @@ export const categories = {
             desc : 'Trying to stay active or just want to make things competitive on your get away?',
             cta1: 'Shop Games',
             nav:{name:'Games', fe_id:'0402'},
-            img: gameOn,
+            img: saw,
         },
         {
             header: "Don't Kid Yourself",
             desc: 'Keeping the young ones safe and smiling can be stressful, but we can make it easy.',
             cta1: 'Shop Kids',
             nav:{name:'Kids', fe_id:'0500'},
-            img: withKids
+            img: tools,
         },        
         {
             header: 'You Can Have it All',
             desc:"Whether you're surfing in style or laying out in the sun, we've got what you need.",
             cta1: 'Shop Paddleboards',
             nav:{name:'Other Boards', fe_id:'0709'},
-            img: layingOut,
+            img: carpet,
         },
 
     ]

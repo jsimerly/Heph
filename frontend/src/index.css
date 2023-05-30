@@ -21,23 +21,38 @@
 }
 
 .full-text-outline {
-  text-shadow: -1px -1px 0 #454d66, 1px -1px 0 #454d66, -1px 1px 0 #454d66, 1px 1px 0 #454d66;
+  text-shadow: -1px -1px 0 #2b2b2a, 1px -1px 0 #2b2b2a, -1px 1px 0 #2b2b2a, 1px 1px 0 #2b2b2a;
 }
 
 .br-text-outline-thick {
-  text-shadow: 2px 2px 0 #454d66, 1px 1px 0 #454d66;
+  text-shadow: 2px 2px 0 #2b2b2a, 1px 1px 0 #2b2b2a;
+}
+
+.br-text-outline-thick-banner {
+  text-shadow: 
+    -1px -1px 0 #2b2b2a,
+    1px -1px 0 #2b2b2a,    
+    -1px 1px 0 #2b2b2a,
+
+
+    5px 5px 0#2b2b2a, 
+    4px 4px 0#2b2b2a,
+    3px 3px 0 #2b2b2a, 
+    2px 2px 0 #2b2b2a, 
+    1px 1px 0 #2b2b2a
 }
 
 .br-text-outline-thick-white {
   text-shadow: 1px 1px 2px #ffffff;
 }
 
+
 .br-text-outline-normal-white {
   text-shadow: 1px 1px 0 #ffffff;
 }
 
 .br-text-outline-normal {
-  text-shadow: 1px 1px 0 #454d66;
+  text-shadow: 1px 1px 0 #2b2b2a;
 }
 
 .scrollbar-hide::-webkit-scrollbar {

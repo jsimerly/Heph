@@ -1,12 +1,13 @@
 import styles from '../styles'
 import { footerInfo, footerSocialIcons, footerSubscribe } from '../../constants/pages/footer_constants'
 import { BlueButton } from './utils'
-import { main_white } from '/src/assets/images/blueElf'
+import {main_white} from '../../constants/assets/images/heph'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { useState } from 'react';
 import { fetchMarketingEmailSub } from '../api/fetchUser';
 import { useContext } from 'react';
 import { ShoppingContext } from '../context';
+import { company } from '../../constants/company_constants';
 
 
 
@@ -79,7 +80,7 @@ const Footer = () => {
                     className='w-[48px] h-[48px] mr-2 cursor-pointer'
                 />
                 <div className='text-primary font-londrina cursor-pointer hidden sm:block'>
-                    Blue Elf
+                    {company.name}
                 </div>
             </div>
             <div className='font-semibold text-[14px] flex sm:flex-row flex-col order-3 sm:order-2'>
@@ -87,13 +88,11 @@ const Footer = () => {
                 <a href='/privacy' className='m-3 cursor-pointer'> Privacy </a>
                 <a href='/cookies' className='m-3 cursor-pointer'> Cookies </a>
             </div>
-            <div className='flex flew-row p-1 text-white order-2 sm:order-3'>
-                {footerSocialIcons.map((iconInfo, index) => (
-                    <BlueButton
-                        key={'socialButton_'+index}
-                        content={iconInfo.icon}
-                        className='hover:scale-110'
-                    />
+            <div className='flex flew-row p-1 text-secondary order-2 sm:order-3 gap-1 cursor-pointer'>
+                {footerSocialIcons.map((iconInfo, i) => (
+                    <button key={i}>
+                        {iconInfo.icon}
+                    </button>
                 ))}
 
             </div>

@@ -45,23 +45,23 @@ const ProductPage = () => {
         price: productInfo.product.total_cost,
         insurance: productInfo.product.insurance_total_cost,
         desc: productInfo.main_desc,
-        bullets: productInfo.bullets,
         days: productInfo.product.days,
         favorited: productInfo.favorited,
-        slug: productInfo.product.slug
+        slug: productInfo.product.slug,
+        keyAttributes: productInfo.product.key_attributes,
       })
 
       setSecondardCardInfo({
         product: productInfo.product,
         full_desc: productInfo.prod_desc,
-        highlights: productInfo.highlights,
-        specs: productInfo.specs,
         categoryRank: productInfo.ranking,
         rankLink: productInfo.rank_link,
         msrp: productInfo.add_info_msrp,
         manufactured: productInfo.add_info_manu,
         brand: productInfo.product.brand.full_name,
-        sku:productInfo.product.slug
+        sku:productInfo.product.slug,
+        specs: productInfo.product.specs,
+        highlights: productInfo.product.highlights
       })
       setFrequentlyBought(productInfo.product.frequently_bought_with)
       setCategory(productInfo.product.category)
