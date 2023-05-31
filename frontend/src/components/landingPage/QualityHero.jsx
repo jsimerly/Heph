@@ -12,10 +12,10 @@ const QualityHeroV2 = () => {
                     {quality.paragraph}
                 </p>
             </div>   
-            <div className="grid grid-cols-2 md:grid-cols-4 justify-center items-center px-6 p-2 sm:p-10 bg-neutralLight rounded-b-md">
+            <div className="flex ss:flex-row flex-col justify-center items-center px-6 p-2 bg-white rounded-b-md">
                 {quality.logos.map((logo, index) => (
-                    <div key={index} className="p-4 sm:p-10 md:h-[100px] flex justify-center items-center">
-                        <img src={logo} className='max-h-[40px]' key={index}/>
+                    <div key={index} className="p-4 sm:p-10 md:w-[200px] flex justify-center items-center">
+                        <img src={logo} className='w-[200px]' key={index}/>
                     </div>
                 ))}
             </div>

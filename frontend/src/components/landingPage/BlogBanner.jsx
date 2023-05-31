@@ -10,19 +10,19 @@ const BlogBanner = () => {
         <div className="flex flex-col sm:flex-row justify-between gap-6 w-full ms:px-6">
             <BlogCard 
                 img={yard_healthy} 
-                title={'10 Fun Beach Games'}
+                title={'How to keep your yard healthy no matter what the elements bring.'}
                 date={'Dec 16, 2022'}
                 link={"10-fun-beach-games-12162022"}                
             />
             <BlogCard 
                 img={top_10_diy} 
-                title={"How to make your child's first beach day a success"}
+                title={"Top 10 Beginner DIY Projects"}
                 date={'Jan 18, 2023'}
                 link={'How-to-make-your-childs-first-beach-day-a-success-01182023'}
             />
             <BlogCard 
                 img={build_a_deck} 
-                title={'Coolest Spots on the East Coast'}
+                title={'Building a DIY Deck that will Impress'}
                 date={'Jan 4, 2023'}
                 link={'coolest-spots-on-the-east-coast-01042023'}
             />

@@ -1,7 +1,7 @@
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-import './mobileSearchbar/dateRangeStyles.css'
+import './dateRangeStyles.css'
 import {useEffect, useState, useContext } from "react";
 import { ShoppingContext } from "../../context";
 
@@ -30,7 +30,7 @@ const WhenDropdown = ({setOpen}) => {
     
   return (
     <div 
-    className={`w-full ss:w-auto ss:absolute z-10 top-16 ss:rounded-md ss:shadow-md justify-center flex `}
+        className={`w-full ss:w-auto ss:absolute z-10 top-16 ss:rounded-md ss:shadow-md justify-center flex`}
     >
         <DateRange
             ranges={[dateRangeHolder]}
@@ -41,6 +41,7 @@ const WhenDropdown = ({setOpen}) => {
             endDatePlaceholder='Finale'
             className={`ss:rounded-md ss:shadow-md`}
             onRangeFocusChange={handleRangeChange}
+            rangeColors={["#e03400", "#2b2b2a", "#2b2b2a"]}
         />
     </div>
   )

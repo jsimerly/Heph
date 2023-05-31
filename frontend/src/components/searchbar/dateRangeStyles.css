@@ -11,10 +11,6 @@
       width: 100%;
     }
   
-    .rdrNextPrevButton {
-      width: 100%;
-    }
-  
     .rdrMonths {
       width: 100%;
     }
@@ -34,5 +30,11 @@
     .rdrDays {
       width: 100%;
     }
-  }
-  
+}
+
+.rdrNextPrevButton {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

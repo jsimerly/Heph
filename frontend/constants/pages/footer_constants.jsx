@@ -6,12 +6,11 @@ export const footerInfo = [
     {
         title: 'Cities',
         links: [
-            { name: 'Virgina Beach, VA'},
-            { name: 'Myrtle Beach, SC'},
-            { name: 'St. Augustine, FL'},
-            { name: 'Daytona Beach, FL'},
-            { name: 'Outer Banks, NC'},
-            { name: 'Hilton Head Island, SC'},
+            { name: 'Fishers'},
+            { name: 'Carmel'},
+            { name: 'Noblesville'},
+            { name: 'Westfield'},
+            { name: 'McCordsville'},
         ]
     },
     {
@@ -88,5 +87,5 @@ export const footerSocialIcons = [
 export const footerSubscribe = {
     title: 'Stay Connected',
     placeholder: 'Email',
-    desc: 'The Blue Elf newsletter is only twice monthly and we send special news letter only discounts. We also update you on new products, deals, and expansion cities.'
+    desc: 'The Heph newsletter is only twice monthly and we send special news letter only discounts. We also update you on new products, deals, and expansion cities.'
 }

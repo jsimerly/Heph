@@ -1,5 +1,5 @@
 export const cartMain = {
-    header: "Great choices! However, please note that adding an item to your cart doesn't guarantee availability. We recommend checking out now before it's sold out."
+    header: "Great choices! However, please note that adding an item to your cart doesn't guarantee availability. We recommend checking out now before aomeone else does!"
 }
 
 export const favoritesCopy = {

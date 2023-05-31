@@ -31,7 +31,7 @@ export const helpButtons = [
     },
     {
         title: 'Dispute Damages', 
-        desc:"Were you charged for item damages that you did not cause? Dispute them here", icon:<BrokenImageIcon/>,
+        desc:"Were you charged for item damages that you did not cause? Dispute them here.", icon:<BrokenImageIcon/>,
         link:'/find-order'
     },
     {
@@ -41,12 +41,12 @@ export const helpButtons = [
     },
     {
         title: 'FAQs', 
-        desc:'Frequently asked Questions', icon:<QuestionAnswerIcon/>,
+        desc:'Frequently Asked Questions', icon:<QuestionAnswerIcon/>,
         link:'/FAQ'
     },
     {
         title:'Become a Partner', 
-        desc:'Partner with us at Blue Elf for special benefits and positioning.', icon:<HandshakeIcon/>,
+        desc:'Partner with us at Heph for special benefits and positioning.', icon:<HandshakeIcon/>,
         link:'/partner'
     }
 ]

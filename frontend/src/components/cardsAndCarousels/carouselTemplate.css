@@ -23,10 +23,21 @@
 
 .custom-swiper .swiper-button-prev,
 .custom-swiper .swiper-button-next {
-  color: #4F86C6; /* Change the color as desired */
+  color: #2b2b2a; /* Change the color as desired */
 }
 
 .custom-swiper .swiper-button-prev:hover,
 .custom-swiper .swiper-button-next:hover {
   transform: scale(1.1); /* Apply scale of 110% on hover */
+}
+
+.custom-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-swiper .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
 }

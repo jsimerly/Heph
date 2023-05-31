@@ -91,6 +91,9 @@ const LandingPage = () => {
                 <div className='my-6 sm:my-16'>
                 <Categories/>
                 </div>
+                <div className='my-6 hidden sm:block'>
+                    <FreeWagon />
+                </div>
                 <div className='sm:my-6 px-2 sm:px-0'>
                 {newArrivals &&
                     <Carousel
@@ -105,11 +108,8 @@ const LandingPage = () => {
                 <div className='my-6 sm:my-16'>
                 <QualityHero/>
                 </div>
-                {/* <div>
+                <div>
                 <SocialProof/>
-                </div> */}
-                <div className='my-6 hidden sm:block'>
-                <FreeWagon />
                 </div>
                 <div className='my-16'>
                 <Change/>
