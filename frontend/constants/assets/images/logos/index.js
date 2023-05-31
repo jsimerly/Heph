@@ -1,7 +1,7 @@
 import hilti from './Hilti_logo.png'
 import deWalt from './DeWalt_Logo.svg'
 import makita from './makita-logo.png'
-import milwuakee from './milwaukee_Logo.svg'
+import milwuakee from './Milwaukee_Logo.svg'
 import rugdoctor from './rugdoctor.png'
 
 export {

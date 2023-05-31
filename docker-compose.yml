@@ -12,7 +12,7 @@ services:
     depends_on:
       - db
     env_file:
-      - ./api/api/.env
+      - ./api/.env
     volumes:
       - static_volume:/api/static
       - media_volume:/api/media
