@@ -45,22 +45,22 @@ export const categories = {
         {
             header: "Stop Cutting Corners",
             desc : "Cutting corners is for saws. You won't ever have to sell your project short renting with us.",
-            cta1: 'Shop Saws',
-            nav:{name:'Games', fe_id:'0402'},
+            cta1: 'Shop Power Tools',
+            nav:{name:'Power Tools', fe_id:'0402'},
             img: saw,
         },
         {
             header: "Power Up You Projects",
             desc: "Unleash the true potential of your projects with our premium selection of power tools.",
-            cta1: 'Shop Powertools',
-            nav:{name:'Kids', fe_id:'0500'},
+            cta1: 'Shop General Tools',
+            nav:{name:'General Tools', fe_id:'0500'},
             img: tools,
         },        
         {
             header: "Prepare to be Floored",
             desc:"Experience the transformative power of our top-tier carpet cleaning solutions. Say goodbye to stains and hello to fresh, clean carpets.",
             cta1: 'Shop Carpet Cleaning',
-            nav:{name:'Other Boards', fe_id:'0709'},
+            nav:{name:'Carpet Cleaning', fe_id:'0709'},
             img: carpet,
         },
 
