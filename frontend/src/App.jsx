@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga'
 
 import Footer from './components/Footer'
 import LandingPage from './components/pages/LandingPage'
@@ -18,6 +19,8 @@ import NotificationBar from './components/navBar/NotificationBar';
 import ErrorBoundry from './components/utils/ErrorBoundry';
 import Empty from './components/utils/Empty';
 import MobileSearch from './components/searchbar/mobileSearchbar/MobileSearch';
+
+ReactGA.initialize('G-1E60B5ZMSW')
 
 function getDateRange(){
   const sessionDateRange = sessionStorage.getItem('date_range')
