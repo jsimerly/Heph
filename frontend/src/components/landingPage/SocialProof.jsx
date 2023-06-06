@@ -10,7 +10,7 @@ const SocialCard = ({name, review, location, pic, init, bg_color}) => {
       backgroundColor: bg_color
     }
     return (
-        <div className="h-[485px] w-[300px] ss:h-[300px] ss:w-[485px] flex ss:flex-row flex-col justify-between rounded-md border border-primary p-6 bg-white">
+        <div className="h-[485px] w-[300px] ss:h-[300px] ss:w-[485px] flex ss:flex-row flex-col justify-between rounded-md shadow-md border-primary p-6 bg-white">
           <FormatQuoteIcon sx={{fontSize: 60}} className="text-secondary"/>
           <div className="flex flex-col h-full justify-between">
             <div className="mt-4">
@@ -68,7 +68,7 @@ const SocialProof = () => {
             
         >
           {socialProof.cards.map((data, index) => (
-            <SwiperSlide className="inline-flex w-auto mr-[4%]">
+            <SwiperSlide className="inline-flex w-auto mr-[3%]">
               <SocialCard 
                 name={data.name} 
                 review={data.text} 
