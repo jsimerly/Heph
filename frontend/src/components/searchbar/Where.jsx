@@ -19,7 +19,7 @@ const Where = () => {
         openFunc={setOpen}
         selectedData={destText}
         dropdown={<WhereDropdown setOpen={setOpen}/>}
-        placeholder={'Where to'}
+        placeholder={'Where'}
         icon={LocationOnIcon}
         mobileName={'where'}
     />
