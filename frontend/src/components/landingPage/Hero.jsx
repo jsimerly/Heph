@@ -13,7 +13,7 @@ const Hero = () => {
   }
 
   return (
-    <div className='bg-[#a4d4f5] w-full text-white flex flex-col sm:flex-row items-center justify-center sm:justify-start relative sm:h-[700px] h-[390px]'>
+    <div className='bg-primaryLight w-full text-white flex flex-col sm:flex-row items-center justify-center sm:justify-start relative sm:h-[700px] h-[390px]'>
       <img 
         src={hero_banner} 
         className={`bg-neutralOffWhite ${loaded? null : 'hidden'} object-scale h-full w-full`} 
