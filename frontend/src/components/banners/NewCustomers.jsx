@@ -6,7 +6,7 @@ const NewCustomers = () => {
   let navShopping = navigateShopping()
 
   const handleClick = () => {
-    navShopping()
+    navShopping({name:'Yard', fe_id:'0100'})
   }
   
   return (

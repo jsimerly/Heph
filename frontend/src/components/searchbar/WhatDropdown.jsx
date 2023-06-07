@@ -131,7 +131,7 @@ const WhatDropdown = ({searchInput, setSearchInput, setSearchParamActive, open, 
             className='fixed ss:static bottom-3 w-full mt-2 flex justify-center'
             onClick={()=>handleSelect(allCategories)}
         >
-            <a className="hover:scale-105 text-center underline text-neutralDark cursor-pointer ">All Categories</a>
+            <a className="text-center underline text-neutralDark cursor-pointer ">All Categories</a>
         </h4>
     </div>
         

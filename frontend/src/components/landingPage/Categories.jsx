@@ -21,7 +21,7 @@ const CatCard = ({header, img, desc, cta1, nav, reverse}) => {
                         {desc}
                     </div>
                     <div className='flex flex-row justify-center items-center py-6 '>
-                        <div className='shadow-md min-w-[120px]'>
+                        <div className='shadow-md min-w-[200px]'>
                             <BlueButton
                                 content={cta1}
                                 onClick={handleCatClicked}

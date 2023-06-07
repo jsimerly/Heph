@@ -5,7 +5,7 @@ import {
     milwuakee,
     rugdoctor } from "../assets/images/logos";
 
-import { yard, carpet, tools, saw } from "../assets/images/categories";
+import { yard, carpet, tools, saw, flooring } from "../assets/images/categories";
 
 import EditIcon from '@mui/icons-material/Edit';
 import LoopIcon from '@mui/icons-material/Loop';
@@ -46,22 +46,22 @@ export const categories = {
             header: "Stop Cutting Corners",
             desc : "Cutting corners is for saws. You won't ever have to sell your project short renting with us.",
             cta1: 'Shop Power Tools',
-            nav:{name:'Power Tools', fe_id:'0402'},
+            nav:{name:'Power Tools', fe_id:'0200'},
             img: saw,
         },
         {
-            header: "Power Up You Projects",
-            desc: "Unleash the true potential of your projects with our premium selection of power tools.",
+            header: "Craftsman's Choice",
+            desc: "Pick and choose exactly which tools you need to make sure your DIY project is perfect.",
             cta1: 'Shop General Tools',
-            nav:{name:'General Tools', fe_id:'0500'},
+            nav:{name:'General Tools', fe_id:'0300'},
             img: tools,
         },        
         {
             header: "Prepare to be Floored",
-            desc:"Experience the transformative power of our top-tier carpet cleaning solutions. Say goodbye to stains and hello to fresh, clean carpets.",
+            desc:"Experience the efficiency of top-tier flooring tools. Say farewell to challenging installations and hello to flawlessly laid floors.",
             cta1: 'Shop Carpet Cleaning',
-            nav:{name:'Carpet Cleaning', fe_id:'0709'},
-            img: carpet,
+            nav:{name:'Carpet Cleaners', fe_id:'0500'},
+            img: flooring,
         },
 
     ]
