@@ -116,7 +116,7 @@ const WhatDropdown = ({searchInput, setSearchInput, setSearchParamActive, open, 
                             {cat.subcategories?.map((subCat, i) => (
                                 <li 
                                     key={i}
-                                    className='pl-4 cursor-pointer hover:underline truncate'
+                                    className='pl-1 cursor-pointer hover:underline truncate'
                                     onClick={()=> handleSelect(subCat)}
                                 >
                                     {subCat.name}
