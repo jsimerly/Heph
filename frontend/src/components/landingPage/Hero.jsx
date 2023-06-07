@@ -20,15 +20,15 @@ const Hero = () => {
         onLoad={handleImageLoad}
       />
       <div className={`bg-neutralOffWhite ${loaded? 'hidden' : null}`}></div>
-      <div className='absolute flex justify-center sm:justify-end items-center sm:h-[75%] sm:w-1/2 h-[90%] mx-6 sm:mx-0 bg-white sm:rounded-r-lg sm:rounded-l-none rounded-md sm:min-w-[650px]'>
+      <div className='absolute flex justify-center sm:justify-end items-center sm:h-[75%] sm:w-1/2 h-full  bg-primary sm:bg-white sm:rounded-r-lg sm:rounded-l-none sm:rounded-md sm:min-w-[650px]'>
         <div className='flex flex-col justify-center items-center sm:items-start text-primary sm:w-[550px] p-6 sm:mr-[100px] gap-8'>
-          <h1 className='text-[30px] sm:text-[55px] font-bold px-0 leading-8 sm:leading-[60px] text-center sm:text-start'>
+          <h1 className='text-[30px] sm:text-[55px] font-bold px-0 leading-8 sm:leading-[60px] text-center sm:text-start text-white sm:text-neutralDark'>
             {heroMain.title}
           </h1>
-          <p className='sm:text-[20px] leading-6 sm:leading-8 text-neutralDark text-center sm:text-start max-w-[450px]'>
+          <p className='sm:text-[20px] leading-6 sm:leading-8 text-white sm:text-neutralDark text-center sm:text-start max-w-[450px]'>
             {heroMain.desc}
           </p>
-          <div className='sm:w-1/3'>
+          <div className='w-1/3'>
             <LargeBlueButton
               onClick={handleClick}
               content={heroMain.cta}
