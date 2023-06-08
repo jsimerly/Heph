@@ -11,16 +11,6 @@ const header = (
 </div>
 )
 
-function scrollN(){
-  if (window.innerWidth < 680) {
-    return 1
-  } else if (window.innerWidth < 1200) {
-    return 2
-  } else {
-    return 3
-  }
-}
-
 const BrowsingHistory = ({addExtraFunction}) => {
   const {selectedDateRange} = useContext(ShoppingContext)
   const [browsingHistory, setBrowsingHistory] = useState([])
@@ -29,8 +19,10 @@ const BrowsingHistory = ({addExtraFunction}) => {
     fetchBrowseHistory(setBrowsingHistory, selectedDateRange.startDate, selectedDateRange.endDate, selectedDateRange.first)
   },[selectedDateRange])
 
+  if (browsingHistory.length === 0) {
+    return null; 
+  }
 
-  //replace this fetch with BrowsingHistory endpoint
   return (
     <div className="p-2">
       <CarouselTemplate
@@ -38,7 +30,6 @@ const BrowsingHistory = ({addExtraFunction}) => {
         addExtraFunction={addExtraFunction}
         cardData={browsingHistory}
         header={header}
-        scrollNFunc={scrollN}
       />
     </div>
   )
