@@ -112,7 +112,7 @@ const WhatDropdown = ({searchInput, setSearchInput, setSearchParamActive, open, 
                             }
 
                         </div>   
-                        <ul className={`${openCats ? null : 'hidden ss:block'}`}>
+                        <ul className={`${openCats ? null : 'hidden'}`}>
                             {cat.subcategories?.map((subCat, i) => (
                                 <li 
                                     key={i}
