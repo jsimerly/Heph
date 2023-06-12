@@ -90,7 +90,7 @@ const MobileSearch = ({immediateSearch, searchInput, setSearchInput, searchParam
               <div 
                 className={` flex flex-row items-center w-[60%] pt-2 pb-1 
                 ${ displayData ? 'text-neutralDark' : 'text-neutralLight'}
-                ${ showSlideUp_mobile && activePopup_mobile === 'what' ? 'border-primary' : 'border-white'} border-t-2
+                ${ showSlideUp_mobile && activePopup_mobile === 'what' ? 'border-secondary' : 'border-white'} border-t-2
                 `}
                 onClick={handleCategoriesClicked}
               >
