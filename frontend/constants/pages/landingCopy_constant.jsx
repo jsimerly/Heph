@@ -12,7 +12,7 @@ import LoopIcon from '@mui/icons-material/Loop';
 import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 
 export const heroMain = {
-    title: 'Stop Putting Off Projects',
+    title: 'Tools to Your Doorstep',
     desc: "Heph provides tools for rent to be dropped off and picked up at your home.",
     cta: "Shop Now"
 }
@@ -40,10 +40,10 @@ export const howToInfo = {
 }
 
 export const categories = {
-    title: 'Spend Less Time Shopping and More Time Building',
+    title: 'Stop Putting Off Projects',
     cats: [
         {
-            header: "Stop Cutting Corners",
+            header: "No More Cutting Corners",
             desc : "Cutting corners is for saws. You won't ever have to sell your project short renting with us.",
             cta1: 'Shop Power Tools',
             nav:{name:'Power Tools', fe_id:'0200'},

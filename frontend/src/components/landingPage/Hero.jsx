@@ -16,7 +16,7 @@ const Hero = () => {
     <div className='bg-primaryLight w-full text-white flex flex-col sm:flex-row items-center justify-center sm:justify-start relative sm:h-[700px] hero-image-height'>
       <img 
         src={hero_banner} 
-        className={`bg-neutralOffWhite ${loaded? null : 'hidden'} object-scale h-full w-full hidden sm:block`} 
+        className={`bg-neutralOffWhite ${loaded? null : 'hidden'} object-none h-full w-full hidden sm:block`} 
         onLoad={handleImageLoad}
       />
       <div className='sm:hidden h-full relative w-full'>
@@ -29,10 +29,10 @@ const Hero = () => {
       </div>
 
       <div className={`bg-neutralOffWhite ${loaded? 'hidden' : null}`}></div>
-      <div className='absolute flex flex-col justify-center sm:justify-end items-center sm:h-[75%] w-full sm:w-1/2 h-full sm:bg-white sm:rounded-r-lg sm:rounded-l-none sm:rounded-md sm:min-w-[650px] -top-[80px] sm:top-auto z-20 sm:z-0'>
-        <div className='h-[80px]'></div>
+      <div className='absolute flex flex-col justify-center sm:justify-end items-center sm:h-[75%] w-full sm:w-1/2 h-full sm:bg-white sm:rounded-r-lg sm:rounded-l-none sm:rounded-md sm:min-w-[650px] -top-[80px] sm:top-auto z-20 sm:z-0 px-6'>
+        <div className='h-[80px] sm:h-0'></div>
         <div className='flex flex-col h-full justify-between sm:justify-center items-center sm:items-start text-primary sm:w-[550px] p-3 sm:mr-[100px] gap-8'>
-          <h1 className='text-[55px] font-bold px-0 leading-[60px] sm:leading-[60px] text-center sm:text-start text-white sm:text-neutralDark hero-outline sm:h-auto pt-10'>
+          <h1 className='text-[55px] font-bold px-0 leading-[60px] sm:leading-[60px] text-center sm:text-start text-white sm:text-neutralDark hero-outline sm:h-auto pt-10 sm:pt-0'>
             {heroMain.title}
           </h1>
           <div className='flex flex-col justify-center items-center sm:items-start w-full gap-8'>
