@@ -68,7 +68,7 @@ const MobileSearch = ({immediateSearch, searchInput, setSearchInput, searchParam
             <div className='flex flex-row w-full'>
               <div 
                 className={`flex flex-col justify-center items-center w-[20%] pt-2 pb-1  ${ selectedDestination ? 'text-neutralDark' : 'text-neutralLight'}
-                ${ showSlideUp_mobile && activePopup_mobile === 'where' ? 'border-primary' : 'border-white'} border-t-2
+                ${ showSlideUp_mobile && activePopup_mobile === 'where' ? 'border-secondary' : 'border-white'} border-t-2
                 `}
                 onClick={handleLocationClicked}
               >
@@ -79,7 +79,7 @@ const MobileSearch = ({immediateSearch, searchInput, setSearchInput, searchParam
               </div>
               <div 
                 className={`flex flex-col justify-center items-center w-[20%] pt-2 pb-1 ${ selectedDateRange?.first ? 'text-neutralDark' : 'text-neutralLight'}
-                ${ showSlideUp_mobile && activePopup_mobile === 'when' ? 'border-primary' : 'border-white'} border-t-2`}
+                ${ showSlideUp_mobile && activePopup_mobile === 'when' ? 'border-secondary' : 'border-white'} border-t-2`}
                 onClick={handleCalendarClicked}
               >
                 <CalendarMonthIcon sx={{fontSize: 30}}/>
