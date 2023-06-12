@@ -1,6 +1,6 @@
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import BeachAccessIcon from '@mui/icons-material/BeachAccess';
+import ConstructionIcon from '@mui/icons-material/Construction';
 import { BlueButton } from "../../utils"
 import navigateShopping from '../../../hooks/navigateShopping';
 import navigateSearch from "../../../hooks/navigateSearch";
@@ -96,7 +96,7 @@ const MobileSearch = ({immediateSearch, searchInput, setSearchInput, searchParam
               >
                 <div className='w-[10%]'></div>
                 <div className='flex flex-col items-center'>
-                  <BeachAccessIcon sx={{fontSize: 30}}/> 
+                  <ConstructionIcon sx={{fontSize: 30}}/> 
                   <span className='ml-1 text-[10px]'>
                     What
                   </span>
