@@ -44,7 +44,7 @@ const Hero = () => {
               
             </div>
           </div>
-          <div className='h-[10%] sm:h-0'/>
+          <div className='h-[18%] sm:h-0'/>
         </div>
       </div>
     </div>

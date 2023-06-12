@@ -2,7 +2,7 @@ import hero_banner from './hero.webp'
 import grass_banner from './grass_banner.webp'
 import free_tool_banner from './free_tool_kit.webp'
 import heph_line_drawing from './heph_line_drawing.webp'
-import hero_mobile from './hero_mobile.webp'
+import hero_mobile from './hero_mobile_2.webp'
 
 export {
     hero_banner,
