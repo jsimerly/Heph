@@ -17,7 +17,7 @@ const CatCard = ({header, img, desc, cta1, nav, reverse}) => {
                     <h3 className='font-bold md:text-[36px] text-[26px] text-primary'>
                         {header}
                     </h3>
-                    <div className='text-neutralDark text-[18px]'>
+                    <div className='text-neutralDark text-[18px] px-3'>
                         {desc}
                     </div>
                     <div className='flex flex-row justify-center items-center py-6 '>
