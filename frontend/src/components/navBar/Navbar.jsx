@@ -14,7 +14,7 @@ const Navbar = ({immediateSearch, searchInput, setSearchInput, searchParamActive
     const [openAccount, setOpenAccount, handleClickAccount, node] = useDropdown(false)
 
   return (
-    <nav className={`bg-white text-primary w-full flex p-4 justify-center items-center fixed z-20 h-[80px]`}>
+    <nav className={`bg-white text-primary w-full flex p-4 justify-center items-center fixed z-50 h-[80px]`}>
             <div className={`${styles.boxWidth} flex justify-between items-center`}>
                 <a href='/'>
                     <div className='flex justify-start items-center text-[28px] mr-5' to='/'>
