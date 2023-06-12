@@ -25,7 +25,7 @@ const Hero = () => {
           className={`bg-neutralOffWhite ${loaded? null : 'hidden'} object-scale h-full w-full `} 
           onLoad={handleImageLoad}
         />
-        <div className='bg-black h-full z-10 w-full absolute top-0 opacity-15'/>
+        <div className='bg-black h-full z-10 w-full absolute top-0 opacity-10'/>
       </div>
 
       <div className={`bg-neutralOffWhite ${loaded? 'hidden' : null}`}></div>
