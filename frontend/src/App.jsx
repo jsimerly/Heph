@@ -144,7 +144,7 @@ function App() {
             cta={notifcationCta}
             error={notificationError}
           />
-          <div className='sm:h-[80px]'/>
+          <div className='h-[80px]'/>
           <ErrorBoundry fallback={<Empty className='my-[200px]'/>}>
           <Routes>
             <Route exact path='/' element={

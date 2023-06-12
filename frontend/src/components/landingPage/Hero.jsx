@@ -14,25 +14,28 @@ const Hero = () => {
 
   return (
     <div className='bg-primaryLight w-full text-white flex flex-col sm:flex-row items-center justify-center sm:justify-start relative sm:h-[700px] h-screen'>
-      <div className='h-[80px] sm:h-0'/>
       <img 
         src={hero_banner} 
         className={`bg-neutralOffWhite ${loaded? null : 'hidden'} object-scale h-full w-full hidden sm:block`} 
         onLoad={handleImageLoad}
       />
-      <img 
-        src={hero_mobile} 
-        className={`bg-neutralOffWhite ${loaded? null : 'hidden'} object-scale h-full w-full sm:hidden`} 
-        onLoad={handleImageLoad}
-      />
+      <div className='sm:hidden h-full relative'>
+        <img 
+          src={hero_mobile} 
+          className={`bg-neutralOffWhite ${loaded? null : 'hidden'} object-scale h-full w-full `} 
+          onLoad={handleImageLoad}
+        />
+        <div className='bg-black h-full z-10 w-full absolute top-0 opacity-25'/>
+      </div>
+
       <div className={`bg-neutralOffWhite ${loaded? 'hidden' : null}`}></div>
-      <div className='absolute flex justify-center sm:justify-end items-center sm:h-[75%] w-full sm:w-1/2 h-full bg-black bg-opacity-30 sm:bg-white sm:rounded-r-lg sm:rounded-l-none sm:rounded-md sm:min-w-[650px]'>
-        <div className='flex flex-col h-full justify-center items-center sm:items-start text-primary sm:w-[550px] p-3 sm:mr-[100px] gap-8'>
+      <div className='absolute flex justify-center sm:justify-end items-center sm:h-[75%] w-full sm:w-1/2 h-full sm:bg-white sm:rounded-r-lg sm:rounded-l-none sm:rounded-md sm:min-w-[650px] -top-[80px] sm:top-0 z-20'>
+        <div className='flex flex-col h-full justify-end sm:justify-center items-center sm:items-start text-primary sm:w-[550px] p-3 sm:mr-[100px] gap-8'>
           <div className='h-[80px] sm:h-0'/>
-          <h1 className='text-[55px] font-bold px-0 leading-[55px] sm:leading-[60px] text-center sm:text-start text-white sm:text-neutralDark hero-outline h-[50%] sm:h-auto pt-10 sm:pt-0'>
+          <h1 className='text-[55px] font-bold px-0 leading-[60px] sm:leading-[60px] text-center sm:text-start text-white sm:text-neutralDark hero-outline h-[45%] sm:h-auto pt-10'>
             {heroMain.title}
           </h1>
-          <div className='flex flex-col justify-center items-center sm:items-start w-full gap-8 '>
+          <div className='flex flex-col justify-center items-center sm:items-start w-full gap-8 h-[55%]'>
             <p className='text-[18px] sm:text-[20px] leading-6 sm:leading-8 text-white sm:text-neutralDark text-center sm:text-start max-w-[450px] font-bold hero-outline'>
               {heroMain.desc}
             </p>
@@ -44,7 +47,6 @@ const Hero = () => {
               
             </div>
           </div>
-          <div className='h-[18%] sm:h-0'/>
         </div>
       </div>
     </div>
