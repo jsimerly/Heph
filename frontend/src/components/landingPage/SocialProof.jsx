@@ -68,7 +68,7 @@ const SocialProof = () => {
             
         >
           {socialProof.cards.map((data, index) => (
-            <SwiperSlide className="inline-flex w-auto mr-[3%]">
+            <SwiperSlide className="inline-flex w-auto mr-[3%]" key={index}>
               <SocialCard 
                 name={data.name} 
                 review={data.text} 

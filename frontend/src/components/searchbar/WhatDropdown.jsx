@@ -51,6 +51,8 @@ const WhatDropdown = ({searchInput, setSearchInput, setSearchParamActive, open, 
         setSearchParamActive(true)
     }
 
+    console.log(openCats)
+
   return (
     <div 
         className={`ss:absolute bg-white flex w-full flex-col top-16 right-0 ss:rounded-md p-3 ${open ? '' : 'hidden'} ss:shadow-md z-20 overflow-y-auto  h-full ss:h-auto rel pb-6 ss:pb-2`}
@@ -112,7 +114,7 @@ const WhatDropdown = ({searchInput, setSearchInput, setSearchParamActive, open, 
                             }
 
                         </div>   
-                        <ul className={`${openCats ? null : 'hidden'}`}>
+                        <ul className={`${openCats[i] ? null : 'hidden ss:block'}`}>
                             {cat.subcategories?.map((subCat, i) => (
                                 <li 
                                     key={i}
