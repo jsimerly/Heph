@@ -287,7 +287,7 @@ const OrderSummary = ({subTotal, itemCount, insuranceTotal, deleteFreeItem, acti
             <div className='flex flex-row justify-between'>
                 <h3 className='font-bold'>Total Cost</h3>
                 <div className='font-bold'>
-                    <p> ${getTotal(insuranceTotal + subTotal)}</p>
+                    <p> ${getTotal(insuranceTotal + subTotal).toFixed(2)}</p>
                 </div>
             </div>
         </div>

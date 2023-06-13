@@ -102,7 +102,7 @@ const MobileSearch = ({immediateSearch, searchInput, setSearchInput, searchParam
                   </span>
                 </div>
                 <h3 className="ml-4 text-[16px] font-bold w-[70%] line-clamp-2">
-                  {displayData ? displayData : 'Select a Category'}
+                  {displayData ? displayData : 'Search / Categories'}
                 </h3>
               </div>
             </div>

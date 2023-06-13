@@ -15,6 +15,7 @@ const Information = ({secondaryCardInfo}) => {
                     categoryRank={secondaryCardInfo.categoryRank}
                     rank_link={secondaryCardInfo.rank_link}
                     sku={secondaryCardInfo.sku}
+                    rating={secondaryCardInfo.rating}
                   />,
       'Reviews' : <Reviews
                     product={secondaryCardInfo.product}

@@ -61,7 +61,7 @@ const ProductMain = ({mainCardInfo}) => {
   return (
 
         <div className="flex">
-          <div className="flex flex-row w-2/3">
+          <div className="flex flex-row w-3/5">
             <div className='flex max-h-[642px]'>
               <div className="w-1/5 overflow-hidden hover:overflow-y-auto scrollbar-hide">
               {mainCardInfo && mainCardInfo.imgList.map((image, index) => 
@@ -87,14 +87,14 @@ const ProductMain = ({mainCardInfo}) => {
               </div>
             </div>
           </div>
-          <div className="w-1/3 flex flex-col items-center text-neutralDark p-6">
+          <div className="w-2/5 flex flex-col items-center text-neutralDark p-6">
             <div className='flex flex-row justify-between w-full'>
               {mainCardInfo && 
                 <div className='flex flex-col'>
-                  <h1 className='text-[40px] font-bold leading-none'>
+                  <h1 className='text-[34px] font-bold leading-none'>
                     {mainCardInfo.name}
                   </h1>
-                  <h2 className='text-[28px] '>
+                  <h2 className='text-[20px] '>
                     {mainCardInfo.brand}
                   </h2>
                 </div>
@@ -116,7 +116,7 @@ const ProductMain = ({mainCardInfo}) => {
             {mainCardInfo &&
               <div className='text-center'>
                 
-                  <h3 className='text-[36px] leading-none font-bold'>
+                  <h3 className='text-[30px] leading-none font-bold'>
                     ${mainCardInfo.price.toFixed(2)}
                   </h3>
 
@@ -169,7 +169,7 @@ const ProductMain = ({mainCardInfo}) => {
                   <ul className='pt-6'>
                   {mainCardInfo && mainCardInfo.keyAttributes.map((bullet, i) => (
                     <li key={i}>
-                      <span className='font-bold'>{bullet.att_name}:</span> {bullet.att_stat}
+                      {bullet.att_name}:<span className='ml-1 font-bold'>{bullet.att_stat}</span> 
                     </li>
                     ))}
                   </ul>

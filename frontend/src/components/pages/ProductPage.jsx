@@ -61,7 +61,8 @@ const ProductPage = () => {
         brand: productInfo.product.brand.full_name,
         sku:productInfo.product.slug,
         specs: productInfo.product.specs,
-        highlights: productInfo.product.highlights
+        highlights: productInfo.product.highlights,
+        rating: productInfo.product.average_rating,
       })
       setFrequentlyBought(productInfo.product.frequently_bought_with)
       setCategory(productInfo.product.category)
