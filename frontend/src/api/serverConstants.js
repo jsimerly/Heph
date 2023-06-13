@@ -1,1 +1,1 @@
-export const SERVER_ADDRESS =  'http://127.0.0.1:8000' //  'https://www.hephrentals.com' //   
+export const SERVER_ADDRESS = 'https://www.hephrentals.com' //    'http://127.0.0.1:8000' //  
