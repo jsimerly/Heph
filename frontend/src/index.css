@@ -21,13 +21,13 @@
 }
 
 @media (max-width: 767px) {/* used for mobile */
-  .hero-outline {
-    text-shadow: 2px 2px 0 #2b2b2a, 1px 1px 0 #2b2b2a;
-  }
-
   .hero-image-height { 
     height: calc(100vh - 220px); /*nav: 80px search:60px safari:80px*/
   }
+}
+
+.hero-outline {
+  text-shadow: 2px 2px 0 #2b2b2a, 1px 1px 0 #2b2b2a;
 }
 
 

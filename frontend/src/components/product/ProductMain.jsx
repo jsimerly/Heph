@@ -2,8 +2,14 @@ import { useEffect, useState, useContext } from 'react';
 
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
+
+import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
+import BuildOutlinedIcon from '@mui/icons-material/BuildOutlined';
+import EditCalendarOutlinedIcon from '@mui/icons-material/EditCalendarOutlined';
+import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
+
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
 import { LargeBlueButton, QuantInput, Stars } from '../utils';
 import { fetchItemFavorited, fetchItemsToCart } from '../../api/fetchCart';
 import { ShoppingContext } from '../../context';
@@ -61,9 +67,9 @@ const ProductMain = ({mainCardInfo}) => {
   return (
 
         <div className="flex">
-          <div className="flex flex-row w-3/5">
+          <div className="flex flex-row w-1/2">
             <div className='flex max-h-[642px]'>
-              <div className="w-1/5 overflow-hidden hover:overflow-y-auto scrollbar-hide">
+              <div className="w-1/4 overflow-hidden hover:overflow-y-auto scrollbar-hide">
               {mainCardInfo && mainCardInfo.imgList.map((image, index) => 
               { 
                 const image_path = image.image
@@ -76,7 +82,7 @@ const ProductMain = ({mainCardInfo}) => {
                   />)
               })}
               </div>
-              <div className="w-4/5 rounded-md mx-6">
+              <div className="rounded-md mx-3">
                 {mainImg &&
                   <img
                     src={mainImg}
@@ -87,14 +93,14 @@ const ProductMain = ({mainCardInfo}) => {
               </div>
             </div>
           </div>
-          <div className="w-2/5 flex flex-col items-center text-neutralDark p-6">
+          <div className="w-1/2 flex flex-col items-center text-neutralDark px-6">
             <div className='flex flex-row justify-between w-full'>
               {mainCardInfo && 
                 <div className='flex flex-col'>
-                  <h1 className='text-[34px] font-bold leading-none'>
+                  <h1 className='text-[24px] font-bold leading-none'>
                     {mainCardInfo.name}
                   </h1>
-                  <h2 className='text-[20px] '>
+                  <h2 className='text-[18px] '>
                     {mainCardInfo.brand}
                   </h2>
                 </div>
@@ -121,15 +127,15 @@ const ProductMain = ({mainCardInfo}) => {
                   </h3>
 
 
-                <p className='leading-none'>
+                <p className='leading-none text-[14px]'>
                   For {mainCardInfo.days} days
                 </p>
               </div>
               }
               {mainCardInfo && mainCardInfo.nRatings !== 0 &&
-                <div>
+                <div className='text-secondary'>
                   <Stars rating={mainCardInfo.rating} size='30px'/>
-                  <span className='ml-2'>
+                  <span className='ml-2 text-neutralDark'>
                     ({mainCardInfo.nRatings})
                   </span>
                 </div>
@@ -141,17 +147,17 @@ const ProductMain = ({mainCardInfo}) => {
                 onClick={handleInsuredClicked}
               >
                 {insured ? 
-                <CheckBoxIcon
-                  sx={{fontSize: '35px'}}
-                  className='text-secondary group-hover:scale-110'
+                <VerifiedUserIcon
+                  sx={{fontSize: '25px'}}
+                  className='text-secondary group-hover:scale-105'
                 /> 
                 : 
-                <CheckBoxOutlineBlankIcon
-                  sx={{fontSize: '35px'}}
-                  className='text-secondary group-hover:scale-110'
+                <ShieldOutlinedIcon
+                  sx={{fontSize: '25px'}}
+                  className='text-secondary group-hover:scale-105'
                 />}
                 {mainCardInfo && 
-                  <div className='text-[20px] ml-2 group-hover:underline'>
+                  <div className='text-[16px] ml-2 group-hover:underline'>
                     Insure for <span className='font-bold'> ${mainCardInfo.insurance.toFixed(2)}</span>
                   </div>
                 }
@@ -160,10 +166,10 @@ const ProductMain = ({mainCardInfo}) => {
             {mainCardInfo && 
               <div className='w-full flex flex-col justify-start mt-6'>
                 <div>
-                  <h3 className='font-semibold text-[16px]'>
+                  <h3 className='font-semibold text-[14px]'>
                     Product Description
                   </h3>
-                  <p>
+                  <p className='text-[14px]'>
                     {mainCardInfo.desc}
                   </p>
                   <ul className='pt-6'>
@@ -176,18 +182,44 @@ const ProductMain = ({mainCardInfo}) => {
                 </div>
               </div>
             }
-            <div className='flex flex-row w-full mt-6 p-2'>
-              <div className='w-2/5'>
-                <QuantInput
-                  quant={quant}
-                  setQuant={setQuant}
-                />
+            <div className='w-full mt-6 p-2'>
+              <div className='flex flex-row w-full justify-center '>
+                <div className='w-[120px]'>
+                  <QuantInput
+                    quant={quant}
+                    setQuant={setQuant}
+                  />
+                </div>
+                <div className='w-full  mx-4'>
+                  <LargeBlueButton
+                    content='Add to Cart'
+                    onClick={handleAddToCart}
+                  />
+                </div>
               </div>
-              <div className='w-full mx-4'>
-                <LargeBlueButton
-                  content='Add to Cart'
-                  onClick={handleAddToCart}
-                />
+              <div className='w-full flex justify-center'>              
+                <div className='inline-flex flex-row mt-6 gap-6'>
+                  <div className='flex flex-col gap-3'>
+                    <div className='flex flex-row items-center'>
+                      <LocalShippingOutlinedIcon sx={{fontSize:33}}className='border-secondaryLight border-2 bg-white rounded-full p-1 mr-2'/>
+                      Free Shipping
+                    </div>
+                    <div className='flex flex-row items-center'>
+                      <BuildOutlinedIcon sx={{fontSize:33}}className='border-secondaryLight border-2 bg-white  rounded-full p-1 mr-2'/>
+                      Normal Use Damage Covered
+                    </div>
+                  </div>
+                  <div className='flex flex-col gap-3'>
+                    <div className='flex flex-row items-center'>
+                      <EditCalendarOutlinedIcon sx={{fontSize:33}}className='border-secondaryLight border-2 bg-white rounded-full p-1 mr-2'/>
+                      Early Return
+                    </div>
+                    <div className='flex flex-row items-center'>
+                      <VerifiedOutlinedIcon sx={{fontSize:33}}className='border-secondaryLight border-2 bg-white rounded-full p-1 mr-2'/>
+                      100% Quality Guarantee
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

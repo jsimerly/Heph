@@ -10,10 +10,10 @@
     "start": "asdf"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/icons-material": "^5.11.0",
-    "@mui/material": "^5.11.7",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.5",
     "@tailwindcss/line-clamp": "^0.4.4",
     "date-fns": "^2.29.3",
     "dotenv": "^16.1.4",
