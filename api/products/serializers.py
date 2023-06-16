@@ -144,7 +144,7 @@ class ProductCard_Serializer(serializers.ModelSerializer):
         fields = ['uuid', 'name', 'brand', 'slug','average_rating', 'n_ratings', 'main_image', 'total_cost', 'discount_bool', 'pre_discount_total', 'days', 'favorited', 'filter_tags', 'key_attributes', 'insurance_total_cost']
 
     def get_insurance_total_cost(self,obj):
-        if 'days' in self.context:
+        if 'days' in self.context and obj.insurance_base_cost and obj.insurance_daily_cost:
             days = self.context['days']
             total_insurance_cost = obj.insurance_base_cost + (obj.insurance_daily_cost * days)
             return total_insurance_cost
@@ -201,22 +201,43 @@ class Product_Serializer(serializers.ModelSerializer):
     key_attributes = KeyAttributes_Serializer(many=True)
     highlights = Highlights_Serializer(many=True)
     specs = Specs_Serializer(many=True)
+    discount_bool = serializers.SerializerMethodField()
+    pre_discount_total = serializers.SerializerMethodField()
 
     class Meta:
         model = Product
-        fields = ['uuid', 'name', 'brand', 'slug', 'average_rating', 'n_ratings', 'category', 'filter_tags', 'total_cost', 'days', 'insurance_total_cost', 'main_image', 'images','frequently_bought_with', 'favorited', 'key_attributes', 'highlights', 'specs']
+        fields = ['uuid', 'name', 'brand', 'slug', 'average_rating', 'n_ratings', 'category', 'filter_tags', 'total_cost', 'days', 'insurance_total_cost', 'main_image', 'images','frequently_bought_with', 'favorited', 'key_attributes', 'highlights', 'specs', 'discount_bool', 'pre_discount_total']
 
     def get_total_cost(self, obj):
         if 'days' in self.context:
             days = self.context['days']
             total_cost = obj.base_cost + (obj.daily_cost * days)
+
+            if obj.flat_discount != None:
+                total_cost -= obj.flat_discount
+
+            if obj.perc_discount != None:
+                total_cost *= (1 - obj.perc_discount)
+
             return total_cost
         else:
-
+            return None
+        
+    def get_discount_bool(self, obj):
+        if (obj.perc_discount == None and obj.flat_discount == None):
+            return False
+        return True
+    
+    def get_pre_discount_total(self, obj):
+        if 'days' in self.context:
+            days = self.context['days']
+            total_cost = obj.base_cost + (obj.daily_cost * days)
+            return total_cost
+        else:
             return None
     
     def get_insurance_total_cost(self,obj):
-        if 'days' in self.context:
+        if 'days' in self.context and obj.insurance_base_cost and obj.insurance_daily_cost:
             days = self.context['days']
             total_insurance_cost = obj.insurance_base_cost + (obj.insurance_daily_cost * days)
             return total_insurance_cost

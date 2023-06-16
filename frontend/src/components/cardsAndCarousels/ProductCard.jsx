@@ -113,7 +113,7 @@ const ProductCard = ({item, addExtraFunction}) => {
                 { item.discount_bool &&             
                   <>${item.pre_discount_total.toFixed(2)}</>
                 }
-                </div>
+              </div>
               <div className='flex flex-col h-full justify-center'>
                 <p className='leading-none text-[10px] md:text-[12px] text-center'>
                   For {item.days} Days

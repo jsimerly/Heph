@@ -120,14 +120,16 @@ const ProductMain = ({mainCardInfo}) => {
             </div>
             <div className='flex justify-between items-center w-full mt-6'>
             {mainCardInfo &&
-              <div className='text-center'>
-                
+              <div className='grid grid-cols-2 items-end'>
                   <h3 className='text-[30px] leading-none font-bold'>
                     ${mainCardInfo.price.toFixed(2)}
                   </h3>
-
-
-                <p className='leading-none text-[14px]'>
+                  <div className='line-through flex items-end ml-1 text-[20px]'>
+                    {mainCardInfo.discount_bool &&
+                      <>${mainCardInfo.pre_discount_price.toFixed(2)}</>
+                    }
+                  </div>
+                <p className='leading-none text-[14px] text-center'>
                   For {mainCardInfo.days} days
                 </p>
               </div>
@@ -142,27 +144,29 @@ const ProductMain = ({mainCardInfo}) => {
               }
 
             </div>
-            <div className='w-full mt-6'>
-              <div className='flex grow-0 cursor-pointer group items-center'
-                onClick={handleInsuredClicked}
-              >
-                {insured ? 
-                <VerifiedUserIcon
-                  sx={{fontSize: '25px'}}
-                  className='text-secondary group-hover:scale-105'
-                /> 
-                : 
-                <ShieldOutlinedIcon
-                  sx={{fontSize: '25px'}}
-                  className='text-secondary group-hover:scale-105'
-                />}
-                {mainCardInfo && 
+
+            {mainCardInfo && mainCardInfo.insurance !== null &&
+              <div className='w-full mt-6'>
+                <div className='flex grow-0 cursor-pointer group items-center'
+                  onClick={handleInsuredClicked}
+                >
+                  {insured ? 
+                  <VerifiedUserIcon
+                    sx={{fontSize: '25px'}}
+                    className='text-secondary group-hover:scale-105'
+                  /> 
+                  : 
+                  <ShieldOutlinedIcon
+                    sx={{fontSize: '25px'}}
+                    className='text-secondary group-hover:scale-105'
+                  />}
                   <div className='text-[16px] ml-2 group-hover:underline'>
                     Insure for <span className='font-bold'> ${mainCardInfo.insurance.toFixed(2)}</span>
                   </div>
-                }
+                </div>
               </div>
-            </div>
+            }
+
             {mainCardInfo && 
               <div className='w-full flex flex-col justify-start mt-6'>
                 <div>

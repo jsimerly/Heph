@@ -7,7 +7,7 @@ const BlogBanner = () => {
         <h1 className="text-center text-[36px] text-neutralDark mb-2">
             Our Blogs
         </h1>
-        <div className="flex flex-col sm:flex-row justify-between gap-6 w-full ms:px-6">
+        <div className="flex flex-col sm:flex-row justify-between gap-6 w-full px-2 ms:px-6">
             <BlogCard 
                 img={yard_healthy} 
                 title={'How to keep your yard healthy no matter what the elements bring.'}

@@ -33,7 +33,7 @@ const Hero = () => {
       </div>
 
       <div className={`bg-neutralOffWhite ${loaded? 'hidden' : null}`}></div>
-      <div className='absolute flex flex-col justify-center sm:justify-end items-center sm:h-[75%] w-full sm:w-1/2 h-full sm:rounded-r-lg sm:rounded-l-none sm:rounded-md sm:min-w-[650px] z-20 sm:z-0 px-3 ml-[100px]'>
+      <div className='absolute flex flex-col justify-center sm:justify-end items-center sm:h-[75%] w-full sm:w-1/2 h-full sm:rounded-r-lg sm:rounded-l-none sm:rounded-md sm:min-w-[650px] z-20 sm:z-0 px-3 sm:ml-[100px]'>
         <div className='flex flex-col h-full justify-between sm:justify-center items-center sm:items-start text-primary sm:w-[650px] p-3 sm:mr-[100px] gap-8'>
           <h1 className='text-[60px] font-bold px-0 leading-[60px] sm:leading-[60px] text-center sm:text-start text-white  hero-outline sm:h-auto pt-10 sm:pt-0 h-full'>
             {heroMain.title}

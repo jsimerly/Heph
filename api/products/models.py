@@ -101,8 +101,8 @@ class Product(models.Model):
     base_cost = models.DecimalField(decimal_places=2, max_digits=8)
     daily_cost = models.DecimalField(decimal_places=2, max_digits=8)
 
-    insurance_base_cost = models.DecimalField(decimal_places=2, max_digits=8)
-    insurance_daily_cost = models.DecimalField(decimal_places=2, max_digits=8)
+    insurance_base_cost = models.DecimalField(decimal_places=2, max_digits=8, null=True, blank=True)
+    insurance_daily_cost = models.DecimalField(decimal_places=2, max_digits=8, null=True, blank=True)
 
     perc_discount = models.DecimalField(max_digits=2, decimal_places=2, blank=True, null=True)
     flat_discount = models.DecimalField(max_digits=5, decimal_places=2, blank=True, null=True)

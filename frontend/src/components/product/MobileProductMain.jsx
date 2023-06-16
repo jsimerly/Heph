@@ -2,10 +2,18 @@ import { useEffect, useState, useContext } from 'react';
 import 'swiper/swiper-bundle.min.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Pagination } from 'swiper/core';
+
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
+
+import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
+import BuildOutlinedIcon from '@mui/icons-material/BuildOutlined';
+import EditCalendarOutlinedIcon from '@mui/icons-material/EditCalendarOutlined';
+import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
+
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
+
 import { LargeBlueButton, QuantInput, Stars } from '../utils';
 import { fetchItemFavorited, fetchItemsToCart } from '../../api/fetchCart';
 import { ShoppingContext } from '../../context';
@@ -115,35 +123,38 @@ const MobileProductMain = ({mainCardInfo}) => {
                     </div>
                 }
                 {mainCardInfo && mainCardInfo.nRatings !== 0 &&
-                    <div>
-                      <Stars rating={mainCardInfo.rating} size='30px'/>
-                    <span className='ml-2'>
+                    <div className='text-secondary'>
+                      <Stars rating={mainCardInfo.rating} size='30px' />
+                    <span className='ml-2 text-neutralDark'>
                         ({mainCardInfo.nRatings})
                     </span>
                     </div>
                 }
             </div>
-            <div className='w-full mt-3'>
-              <div className='inline-flex grow-0 cursor-pointer group items-center'
-                onClick={handleInsuredClicked}
-              >
-                {insured ? 
-                <CheckBoxIcon
-                  sx={{fontSize: '35px'}}
-                  className='text-secondary group-hover:scale-110'
-                /> 
-                : 
-                <CheckBoxOutlineBlankIcon
-                  sx={{fontSize: '35px'}}
-                  className='text-secondary group-hover:scale-110'
-                />}
-                {mainCardInfo && 
-                  <div className='text-[20px] ml-2 group-hover:underline'>
-                    Insure for <span className='font-bold'> ${mainCardInfo.insurance.toFixed(2)}</span>
-                  </div>
-                }
+            {mainCardInfo && mainCardInfo.insurance !== null &&
+              <div className='w-full mt-3'>
+                <div className='inline-flex grow-0 cursor-pointer group items-center'
+                  onClick={handleInsuredClicked}
+                >
+                  {insured ? 
+                  <VerifiedUserIcon
+                    sx={{fontSize: '35px'}}
+                    className='text-secondary group-hover:scale-110'
+                  /> 
+                  : 
+                  <ShieldOutlinedIcon
+                    sx={{fontSize: '35px'}}
+                    className='text-secondary group-hover:scale-110'
+                  />}
+                  {mainCardInfo && 
+                    <div className='text-[20px] ml-2 group-hover:underline'>
+                      Insure for <span className='font-bold'> ${mainCardInfo.insurance.toFixed(2)}</span>
+                    </div>
+                  }
+                </div>
               </div>
-            </div>
+            }
+            
             {mainCardInfo && 
               <div className='w-full flex flex-col justify-start mt-3 sm:'>
                 <div>
@@ -177,6 +188,30 @@ const MobileProductMain = ({mainCardInfo}) => {
                 />
               </div>
             </div>
+            <div className='w-full flex justify-center'>              
+                <div className='inline-flex flex-row mt-6 gap-6'>
+                  <div className='flex flex-col gap-3'>
+                    <div className='flex flex-row items-center'>
+                      <LocalShippingOutlinedIcon sx={{fontSize:33}}className='border-secondaryLight border-2 bg-white rounded-full p-1 mr-2'/>
+                      Free Shipping
+                    </div>
+                    <div className='flex flex-row items-center'>
+                      <BuildOutlinedIcon sx={{fontSize:33}}className='border-secondaryLight border-2 bg-white  rounded-full p-1 mr-2'/>
+                      Normal Use Damage Covered
+                    </div>
+                  </div>
+                  <div className='flex flex-col gap-3'>
+                    <div className='flex flex-row items-center'>
+                      <EditCalendarOutlinedIcon sx={{fontSize:33}}className='border-secondaryLight border-2 bg-white rounded-full p-1 mr-2'/>
+                      Early Return
+                    </div>
+                    <div className='flex flex-row items-center'>
+                      <VerifiedOutlinedIcon sx={{fontSize:33}}className='border-secondaryLight border-2 bg-white rounded-full p-1 mr-2'/>
+                      100% Quality Guarantee
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
 

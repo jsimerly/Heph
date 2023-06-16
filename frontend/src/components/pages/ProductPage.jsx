@@ -35,6 +35,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     if (productInfo){
+      console.log(productInfo)
       setMainCardInfo({
         name: productInfo.product.name,
         brand: productInfo.product.brand.name,
@@ -49,6 +50,8 @@ const ProductPage = () => {
         favorited: productInfo.favorited,
         slug: productInfo.product.slug,
         keyAttributes: productInfo.product.key_attributes,
+        discount_bool: productInfo.product.discount_bool,
+        pre_discount_price: productInfo.product.pre_discount_total,
       })
 
       setSecondardCardInfo({

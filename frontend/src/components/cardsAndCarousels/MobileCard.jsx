@@ -56,18 +56,19 @@ const MobileCard = ({item, addExtraFunction}) => {
     <ErrorBoundry fallback="Oops, Sorry! We appear to be missing something.">
 
     <div 
-        className='w-full h-[195px] sm:h-[260px] ms:h-[360px] rounded-md bg-white flex flex-row relative group shadow-md justify-center items-center p-2 cursor-pointer'
+        className='w-full  min-h-[200px] rounded-md bg-white flex flex-row relative group shadow-md justify-center items-center p-2 cursor-pointer'
         onClick={navigate}
     >
+
       {item.main_image && (
           <img 
             src={item.main_image.image} 
-            className='bg-white object-scale-down rounded-md hover:cursor-pointer aspect-square max-w-[50%] h-[100%]'
+            className='bg-white object-scale-down rounded-md hover:cursor-pointer aspect-square w-[40%] h-[100%]'
           />
       )}
       <div className='p-4 text-neutralDark flex flex-col items-start justify-between w-full h-full'>
         <div className='flex flex-row justify-between w-full'>
-            <div className='flex flex-col justify-end min-h-[60px] w-[80%]'>
+            <div className='flex flex-col justify-start min-h-[60px] w-[80%]'>
               <h3 
                   className='font-bold text-[16px] md:text-[28px] line-clamp-2'
               >
@@ -94,7 +95,7 @@ const MobileCard = ({item, addExtraFunction}) => {
           </div>
         </div>
 
-        <ul>
+        <ul className='my-3'>
           {item.key_attributes.map((attribute, i) => (
             <li key={i}>
               <span className='font-bold'>{attribute.att_name}:</span> {attribute.att_stat}
