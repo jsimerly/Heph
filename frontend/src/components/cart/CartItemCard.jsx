@@ -1,10 +1,13 @@
 import CloseIcon from '@mui/icons-material/Close';
+
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
+
 import { useContext, useEffect, useState, useRef } from 'react';
 import { ShoppingContext } from '../../context';
-import { QuantInput } from '../utils';
 import { fetchItemDeleteCart, fetchUpdateQuantity, fetchUpdateInsurance } from '../../api/fetchCart';
 import navigateProduct from '../../hooks/navigateProduct';
 
@@ -111,11 +114,11 @@ const CartItemCard = ({item, updateCartItem, deleteCartItem, getInsurance, getCo
                 onClick={handleInsuredClicked}
               >
                 {item.insurance_purchased ? 
-                <CheckBoxIcon
+                <VerifiedUserIcon
                   className='text-secondary group-hover:scale-110'
                 /> 
                 : 
-                <CheckBoxOutlineBlankIcon
+                <ShieldOutlinedIcon
                   className='text-secondary group-hover:scale-110'
                 />}
               

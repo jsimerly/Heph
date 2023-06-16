@@ -66,6 +66,8 @@ const ProductPage = () => {
         specs: productInfo.product.specs,
         highlights: productInfo.product.highlights,
         rating: productInfo.product.average_rating,
+        compDailyCost: productInfo.product.local_competitor_daily_cost,
+        compDeliveryFee: productInfo.product.local_competitor_delivery_fee,
       })
       setFrequentlyBought(productInfo.product.frequently_bought_with)
       setCategory(productInfo.product.category)

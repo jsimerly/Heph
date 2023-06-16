@@ -13,7 +13,7 @@ const DetailBox = ({title, Card, desc}) => (
   </div>
 )
 
-const Details = ({full_desc, highlights, categoryRank, rankLink, brand, msrp, manufactured, sku, rating}) => {
+const Details = ({full_desc, highlights, categoryRank, rankLink, brand, msrp, manufactured, sku, rating, compDailyCost, compDeliveryFee}) => {
 
   return (
     <div className='flex flex-col md:flex-row w-full'>
@@ -46,6 +46,8 @@ const Details = ({full_desc, highlights, categoryRank, rankLink, brand, msrp, ma
             manufactured={manufactured}
             sku={sku}
             rating={rating}
+            compDailyCost={compDailyCost}
+            compDeliveryFee={compDeliveryFee}
           />
         </div>
         </div>

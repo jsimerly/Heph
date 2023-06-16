@@ -206,7 +206,7 @@ class Product_Serializer(serializers.ModelSerializer):
 
     class Meta:
         model = Product
-        fields = ['uuid', 'name', 'brand', 'slug', 'average_rating', 'n_ratings', 'category', 'filter_tags', 'total_cost', 'days', 'insurance_total_cost', 'main_image', 'images','frequently_bought_with', 'favorited', 'key_attributes', 'highlights', 'specs', 'discount_bool', 'pre_discount_total']
+        fields = ['uuid', 'name', 'brand', 'slug', 'average_rating', 'n_ratings', 'category', 'filter_tags', 'total_cost', 'days', 'insurance_total_cost', 'main_image', 'images','frequently_bought_with', 'favorited', 'key_attributes', 'highlights', 'specs', 'discount_bool', 'pre_discount_total', 'local_competitor_daily_cost', 'local_competitor_delivery_fee']
 
     def get_total_cost(self, obj):
         if 'days' in self.context:

@@ -10,6 +10,7 @@ import VerifiedOutlinedIcon from '@mui/icons-material/VerifiedOutlined';
 
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import ShieldOutlinedIcon from '@mui/icons-material/ShieldOutlined';
+
 import { LargeBlueButton, QuantInput, Stars } from '../utils';
 import { fetchItemFavorited, fetchItemsToCart } from '../../api/fetchCart';
 import { ShoppingContext } from '../../context';

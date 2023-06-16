@@ -101,6 +101,9 @@ class Product(models.Model):
     base_cost = models.DecimalField(decimal_places=2, max_digits=8)
     daily_cost = models.DecimalField(decimal_places=2, max_digits=8)
 
+    local_competitor_daily_cost = models.DecimalField(decimal_places=2, max_digits=8, null=True, blank=True)
+    local_competitor_delivery_fee = models.DecimalField(decimal_places=2, max_digits=8, blank=True, null=True)
+
     insurance_base_cost = models.DecimalField(decimal_places=2, max_digits=8, null=True, blank=True)
     insurance_daily_cost = models.DecimalField(decimal_places=2, max_digits=8, null=True, blank=True)
 
