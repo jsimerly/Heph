@@ -1,13 +1,13 @@
 
 const StandardDetails = ({desc}) => {
-  const paragraphs = desc.split('\n').filter(paragraph => paragraph.trim() !== '');
+  const paragraphs = desc.replace(/\\n/g, '\n').split('\n').filter(paragraph => paragraph.trim() !== '');
 
   return (
-    <p className="px-6 pb-4 text-[16px] tracking-wide">
+    <div className="px-6 pb-4 text-[16px] tracking-wide space-y-3">
       {paragraphs.map((paragraph, i) => (
-        <>{paragraph}<br/></>
+        <p key={i}>{paragraph}</p>
       ))}
-    </p>
+    </div>
   )
 }
 
