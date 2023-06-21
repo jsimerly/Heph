@@ -17,7 +17,9 @@ from .models import Product, Category, ProductGrouping, Brand, ProductReview
 from .serializers import Product_Serializer, ProductMInfo_Serializer, ProductCard_Serializer, ProductReview_Serializer, Categories_Serializers, IndividualCategory_Serializer, ProductGrouping_Serializer, BrandNameForFilter_Seralizer, CreateReview_Serializer
 
 def getDateContext(request):
+    DEFAULT_DAYS = 1
     date_changed_str = request.GET.get('dateChange')
+    
     if date_changed_str:
         date_changed = date_changed_str.lower() == 'true'
     else:
@@ -37,7 +39,7 @@ def getDateContext(request):
         }
     else:
         context = {
-            'days' : 7
+            'days' : DEFAULT_DAYS
         }
 
     return context
