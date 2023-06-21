@@ -43,7 +43,7 @@ const AllCategories = () => {
                                 <li
                                     className="pl-2 cursor-pointer hover:underline"
                                     key={'subcat_'+i}
-                                    onClick={()=>handleClick(cat)}
+                                    onClick={()=>handleClick(subCat)}
                                 >
                                     {subCat.name}
                                 </li>
