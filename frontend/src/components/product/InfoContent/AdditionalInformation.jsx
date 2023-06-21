@@ -6,10 +6,16 @@ const AdditionalInformation = ({categoryRank, rankLink, brand, msrp, manufacture
         <table className='table-fixed w-full border border-white rounded-md'>
             <tbody>
                 <tr className='bg-white'>
-                    <td>Local Competitor's Rates</td><td>${compDailyCost} per Day</td>
+                    <td>Local Competitor's Rates</td>
+                    <td>
+                        {compDailyCost === null ? 'Item Unavailable' : '$'+compDailyCost+' per Day'}
+                    </td>
                 </tr>
                 <tr className=''>
-                    <td>Local Competitor's Delivery Fee</td><td>${compDeliveryFee}</td>
+                    <td>Local Competitor's Delivery Fee</td>
+                    <td>
+                        {compDailyCost === null ? 'Delivery Unavailable' : '$' + compDeliveryFee}
+                    </td>
                 </tr>
                 <tr className='bg-white'>
                     <td>Brand</td><td>{brand}</td>
