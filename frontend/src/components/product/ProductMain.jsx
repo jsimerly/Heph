@@ -69,8 +69,8 @@ const ProductMain = ({mainCardInfo}) => {
 
         <div className="flex">
           <div className="flex flex-row w-1/2">
-            <div className='flex max-h-[642px]'>
-              <div className="w-1/4 overflow-hidden hover:overflow-y-auto scrollbar-hide">
+            <div className='flex max-h-[525px]'>
+              <div className="w-[20%] overflow-hidden hover:overflow-y-auto scrollbar-hide">
               {mainCardInfo && mainCardInfo.imgList.map((image, index) => 
               { 
                 const image_path = image.image
@@ -79,15 +79,15 @@ const ProductMain = ({mainCardInfo}) => {
                       key={index}
                       src={image_path}
                       onClick={() => setMainImg(image_path)}
-                      className='bg-white rounded-md mb-4 cursor-pointer aspect-square shadow-sm'
+                      className='border border-white rounded-md mb-4 cursor-pointer aspect-square shadow-sm'
                   />)
               })}
               </div>
-              <div className="rounded-md mx-3">
+              <div className="rounded-md mx-3 w-full">
                 {mainImg &&
                   <img
                     src={mainImg}
-                    className='bg-white rounded-md aspect-square shadow-sm p-6'
+                    className='aspect-square rounded-md'
                   />
                 }
 
@@ -131,7 +131,7 @@ const ProductMain = ({mainCardInfo}) => {
                     }
                   </div>
                 <p className='leading-none text-[14px] text-center'>
-                  For {mainCardInfo.days} days
+                  For {mainCardInfo.days} {mainCardInfo.days === 1 ? 'Day' : 'Days'}
                 </p>
               </div>
               }

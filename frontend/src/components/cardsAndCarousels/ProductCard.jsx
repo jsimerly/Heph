@@ -116,7 +116,7 @@ const ProductCard = ({item, addExtraFunction}) => {
               </div>
               <div className='flex flex-col h-full justify-center'>
                 <p className='leading-none text-[10px] md:text-[12px] text-center'>
-                  For {item.days} Days
+                  For {item.days} {item.days === 1 ? 'Day' : 'Days'}
                 </p>
              </div>
             </div>
