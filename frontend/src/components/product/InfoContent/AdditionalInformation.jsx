@@ -14,7 +14,7 @@ const AdditionalInformation = ({categoryRank, rankLink, brand, msrp, manufacture
                 <tr className=''>
                     <td>Local Competitor's Delivery Fee</td>
                     <td>
-                        {compDailyCost === null ? 'Delivery Unavailable' : '$' + compDeliveryFee}
+                        {compDeliveryFee === null ? 'Delivery Unavailable' : '$' + compDeliveryFee}
                     </td>
                 </tr>
                 <tr className='bg-white'>
