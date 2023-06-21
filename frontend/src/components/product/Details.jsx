@@ -1,5 +1,6 @@
 import { StandardDetails, Highlights, AdditionalInformation } from "./InfoContent"
 
+
 const DetailBox = ({title, Card, desc}) => (
   <div className='bg-neutralOffWhite rounded-md flex flex-col w-full md:px-3 py-3 mb-2'>
     <h1 className='text-center font-semibold p-2 text-[20px]'>
