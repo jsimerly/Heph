@@ -87,7 +87,7 @@ const ProductMain = ({mainCardInfo}) => {
                 {mainImg &&
                   <img
                     src={mainImg}
-                    className='aspect-square rounded-md'
+                    className='aspect-square rounded-md w-full'
                   />
                 }
 
